@@ -1,5 +1,15 @@
 {
+  "scopedRegistries": [
+   {
+      "name": "A* Pathfinding Project",
+      "url": "https://arongranberg.com/packages/d3a95ba1b912325f98c269305487881e5a86d11c4a96e/",
+      "scopes": [
+        "com.arongranberg.astar"
+      ]
+    }
+  ],
   "dependencies": {
+	"com.arongranberg.astar": "4.3.48",
     "com.unity.collab-proxy": "1.15.7",
     "com.unity.ide.rider": "3.0.9",
     "com.unity.ide.visualstudio": "2.0.12",
