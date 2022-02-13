@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace MF
@@ -25,7 +26,7 @@ namespace MF
         public float MovementSpeed = 3f;
         public float WalkSpeed = 3f;
         public float RunSpeed = 6f;
-
+        public List<GameObject> WanderPoints = new List<GameObject>();
 
         public virtual void Configure(ActorModel model)
         {
@@ -38,6 +39,8 @@ namespace MF
             model.MovementSpeed.Value = MovementSpeed;
             model.WalkSpeed.Value = WalkSpeed;
             model.RunSpeed.Value = RunSpeed;
+            model.WanderPoints = WanderPoints;
+
         }
 
         private string GetOrInitializeUniqueIdentifier()
