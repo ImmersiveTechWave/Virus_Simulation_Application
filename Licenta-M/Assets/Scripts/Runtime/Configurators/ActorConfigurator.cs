@@ -40,7 +40,6 @@ namespace MF
             model.WalkSpeed.Value = WalkSpeed;
             model.RunSpeed.Value = RunSpeed;
             model.WanderPoints = WanderPoints;
-
         }
 
         private string GetOrInitializeUniqueIdentifier()

@@ -7,7 +7,7 @@ namespace MF
 	public class GoToPoint : BaseAction<ActorController>
 	{
 		private Random random;
-		private bool hasPoints = true;
+		private bool hasPoints;
 
 		public override void OnAwake()
 		{
