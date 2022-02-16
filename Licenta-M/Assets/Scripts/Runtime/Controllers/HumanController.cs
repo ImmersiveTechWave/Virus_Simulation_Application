@@ -5,7 +5,7 @@ namespace MF
     [RequireComponent(typeof(HumanConfigurator))]
     public class HumanController : CustomActorController<HumanModel, HumanView, Movement, NervousSystem>
     {
-        private const float DECREASE_TIME = 2f;
+        private const float DECREASE_TIME = 1f;
         private float lastTime;
 
         public override void Start()
@@ -23,7 +23,6 @@ namespace MF
                 Model.Energy.Value -= MyModel.RestDecreaseRate;
                 Model.Hunger.Value -= MyModel.HungerDecreaseRate;
             }
-
         }
     }
 }
