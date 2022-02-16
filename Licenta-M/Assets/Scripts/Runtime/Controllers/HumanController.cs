@@ -1,42 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MF
 {
-    [RequireComponent(typeof(HumanModel))]
-    public class HumanController : MonoBehaviour
+    [RequireComponent(typeof(HumanConfigurator))]
+    public class HumanController : CustomActorController<HumanModel, HumanView, Movement, NervousSystem>
     {
-        private const float PASSED_TIME = 2f;
-        private const float HUNGER_DROP = 0.5f;
-        private const float MONEY_DROP = 0.1f;
-        private const float HEALTH_DROP = 0.05f;
-        private const float REST_DROP = 0.5f;
-
-        private HumanModel humanModel;
+        private const float DECREASE_TIME = 1f;
         private float lastTime;
 
-        private void Awake()
-        {
-            humanModel = GetComponent<HumanModel>();
-        }
-
-        private void Start()
+        public override void Start()
         {
             lastTime = Time.time;
         }
 
         private void Update()
         {
-            if(Time.time - lastTime > PASSED_TIME)
+            if (Time.time - lastTime > DECREASE_TIME)
             {
                 lastTime = Time.time;
-                humanModel.Hunger -= HUNGER_DROP;
-                humanModel.Health -= HEALTH_DROP;
-                humanModel.Rest -= REST_DROP;
-                humanModel.Money -= MONEY_DROP;
+                Model.Health.Value -= MyModel.HealthDecreaseRate;
+                Model.Money.Value -= MyModel.MoneyDecreaseRate;
+                Model.Energy.Value -= MyModel.RestDecreaseRate;
+                Model.Hunger.Value -= MyModel.HungerDecreaseRate;
             }
         }
     }
 }
-

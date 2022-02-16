@@ -1,38 +1,22 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using System;
+using UnityEngine;
 
 namespace MF
 {
 	public class GoToPoint : BaseAction<ActorController>
 	{
-		private Random random;
-		private bool hasPoints;
-
-		public override void OnAwake()
-		{
-			base.OnAwake();
-			random = new Random();
-		}
+		[RequiredField] public SharedGameObject TargetPosition;
 
 		public override void OnStart()
 		{
 			base.OnStart();
-			var count = Actor.Model.WanderPoints.Count;
-			hasPoints = count == 0 ? false : true;
-			if (hasPoints)
-			{
-				var index = random.Next(0, count);
-				Actor.Movement.AiDestination = Actor.Model.WanderPoints[index].transform.position;
-			}
+			Actor.Movement.AiDestination = TargetPosition.Value.transform.position;
 		}
 
 		public override TaskStatus OnUpdate()
 		{
-			if (!hasPoints)
-			{
-				return TaskStatus.Failure;
-			}
+			Actor.Movement.AiDestination = TargetPosition.Value.transform.position;
 			if (!Actor.Movement.HasAiReachedDestination)
 			{
 				return TaskStatus.Running;
