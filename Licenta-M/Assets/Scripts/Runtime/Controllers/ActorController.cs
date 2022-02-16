@@ -40,12 +40,12 @@ namespace MF
         /// </summary>
         public bool IsEnabled => gameObject.activeInHierarchy;
 
-        private void Awake()
+        public virtual void Awake()
         {
             Builder.Build();
         }
 
-        private void Start()
+        public virtual void Start()
         {
             InitializeModelCallbacks();
         }

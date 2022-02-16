@@ -43,7 +43,7 @@ namespace MF
         /// </summary>
         public TNervousSystem MyNervousSystem { get; private set; }
 
-        public void Awake()
+        public override void Awake()
         {
             Builder
                 .WithModel<TModel>()
@@ -51,6 +51,7 @@ namespace MF
                 .WithMovement<TMovement>()
                 .WithNervousSystem<TNervousSystem>()
                 .OnBuilt(InitializeMyReferences);
+            base.Awake();
         }
 
         private void InitializeMyReferences()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -494,8 +494,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 524893785}
-  - component: {fileID: 524893787}
-  - component: {fileID: 524893786}
+  - component: {fileID: 524893790}
+  - component: {fileID: 524893789}
   - component: {fileID: 524893788}
   m_Layer: 0
   m_Name: Human
@@ -520,42 +520,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &524893786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524893781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a8ba91c89ae0f64e8f1afa2c36a1ee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &524893787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524893781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf04b847ed709543b4117566d5d9117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UniqueIdentifier: 791b8d42-5444-4e8f-b5eb-51b216844afb
-  Health: 100
-  Energy: 100
-  Hunger: 100
-  Money: 100
-  MovementSpeed: 3
-  WalkSpeed: 3
-  RunSpeed: 6
-  WanderPoints:
-  - {fileID: 60363112}
-  - {fileID: 1999680233}
-  - {fileID: 1125320379}
 --- !u!114 &524893788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,19 +548,63 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"Variables":[{"Type":"MF.SharedActorController","Name":"actorController","IsShared":true,"ActorControllermValue":0}]}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(766.2221,90.58563)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-0.299621582,123.62912)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-3.7779007,120.150909)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"MF.WanderPoints","NodeData":{"Offset":"(-351.2779,137.585632)"},"ID":3,"Name":"Wander
+        Points","Instant":true,"SharedActorControllerActorController":{"Type":"MF.SharedActorController","Name":"actorController","IsShared":true,"ActorControllermValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(104.917938,141.455261)"},"ID":4,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3}}]}]},"DetachedTasks":[{"Type":"MF.GoToPoint","NodeData":{"Offset":"(670,470)"},"ID":5,"Name":"Go
+        To Point","Instant":true,"SharedGameObjectTargetPosition":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"IsShared":true},"SharedActorControllerActorController":{"Type":"MF.SharedActorController","Name":"actorController","IsShared":true,"ActorControllermValue":1}}],"Variables":[{"Type":"MF.SharedActorController","Name":"actorController","IsShared":true,"ActorControllermValue":2}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
         startIndex: 
         dataPosition: 
         unityObjects:
-        - {fileID: 524893786}
+        - {fileID: 524893789}
+        - {fileID: 524893789}
+        - {fileID: 524893789}
         byteData: 
         byteDataArray: 
       Version: 1.7.1
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
+--- !u!114 &524893789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524893781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246f4dae7f9cbbc418d04e701c4b692c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &524893790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524893781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84651447308dfe4e8e9f30a7308364f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UniqueIdentifier: db9bafdd-4890-491f-9024-1e88a3230991
+  Health: 100
+  Energy: 100
+  Hunger: 100
+  Money: 100
+  MovementSpeed: 3
+  WalkSpeed: 3
+  RunSpeed: 6
+  WanderPoints:
+  - {fileID: 60363112}
+  - {fileID: 1999680233}
+  - {fileID: 1125320379}
+  HungerDecreaseRate: 0.5
+  MoneyDecreaseRate: 0.1
+  HealthDecreaseRate: 0.05
+  RestDecreaseRate: 0.5
 --- !u!1 &832153405
 GameObject:
   m_ObjectHideFlags: 0
