@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -550,13 +550,15 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(766.2221,90.58563)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-0.299621582,123.62912)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-3.7779007,120.150909)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"MF.WanderPoints","NodeData":{"Offset":"(-351.2779,137.585632)"},"ID":3,"Name":"Wander
         Points","Instant":true,"SharedActorControllerActorController":{"Type":"MF.SharedActorController","Name":"actorController","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(104.917938,141.455261)"},"ID":4,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3}}]}]},"DetachedTasks":[{"Type":"MF.GoToPoint","NodeData":{"Offset":"(670,470)"},"ID":5,"Name":"Go
-        To Point","Instant":true,"SharedGameObjectTargetPosition":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"IsShared":true},"SharedActorControllerActorController":{"Type":"MF.SharedActorController","Name":"actorController","IsShared":true}}],"Variables":[{"Type":"MF.SharedActorController","Name":"actorController","IsShared":true},{"Type":"MF.SharedUtilityScore","Name":"moneyScore","IsShared":true,"UtilityScoremValue":{"SingleScore":0,"BooleanIsLocked":false}},{"Type":"MF.SharedUtilityScore","Name":"energyScore","IsShared":true,"UtilityScoremValue":{"SingleScore":0,"BooleanIsLocked":false}}]}'
+        To Point","Instant":true,"SharedGameObjectTargetPosition":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"IsShared":true},"SharedActorControllerActorController":{"Type":"MF.SharedActorController","Name":"actorController","IsShared":true}}],"Variables":[{"Type":"MF.SharedActorController","Name":"actorController","IsShared":true},{"Type":"MF.SharedUtilityScore","Name":"moneyScore","IsShared":true,"UtilityScoremValue":{"SingleScore":0,"BooleanIsLocked":false}},{"Type":"MF.SharedUtilityScore","Name":"energyScore","IsShared":true,"UtilityScoremValue":{"SingleScore":0,"BooleanIsLocked":false}},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"firstPoint","IsShared":true,"GameObjectmValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"secondPoint","IsShared":true,"GameObjectmValue":1}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
         startIndex: 
         dataPosition: 
-        unityObjects: []
+        unityObjects:
+        - {fileID: 60363112}
+        - {fileID: 1999680233}
         byteData: 
         byteDataArray: 
       Version: 1.7.1
