@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace MF
 {
-	[TaskDescription("This task calculated the utility score for human energy.")]
+	[TaskDescription("This task calculated the utility score for human health.")]
 	[TaskCategory("UtilityScore/Human")]
-	public class HumanEnergyUtilityScore : BaseAction<HumanController>
+	public class HumanHealthUtilityScore : BaseAction<HumanController>
 	{
 		[RequiredField] public SharedUtilityScore Score;
 
@@ -13,13 +13,13 @@ namespace MF
 		{
 			if (Actor == null)
 			{
-				Debug.LogWarning("Actor is null in HumanEnergyUtilityScore.");
+				Debug.LogWarning("Actor is null in HumanHealthUtilityScore.");
 				return 0f;
 			}
 
 			if (Score == null)
 			{
-				Debug.LogWarning("Score is null in HumanEnergyUtilityScore.");
+				Debug.LogWarning("Score is null in HumanHealthUtilityScore.");
 				return 0f;
 			}
 
@@ -28,8 +28,8 @@ namespace MF
 				return Score.Value.Score;
 			}
 
-			var energy = Actor.Model.Energy.Value / 100f;
-			var score = Mathf.Sin(1.8f * energy + 1.6f) * 0.9f;
+			var health = Actor.Model.Health.Value / 100;
+			var score = Mathf.Sin(1.8f * health + 1.6f);
 			score = Mathf.Clamp(score, 0, 1);
 
 			Score.Value = new UtilityScore(score, false);

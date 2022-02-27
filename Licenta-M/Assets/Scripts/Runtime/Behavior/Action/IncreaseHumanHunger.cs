@@ -1,13 +1,11 @@
 using BehaviorDesigner.Runtime.Tasks;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MF
 {
-	[TaskDescription("This task increase energy for human.")]
+	[TaskDescription("This task increase hunger for human.")]
 	[TaskCategory("UtilityScore/Increase")]
-	public class IncreaseHumanEnergy : BaseAction<HumanController>
+	public class IncreaseHumanHunger : BaseAction<HumanController>
 	{
 		private float lastTime;
 
@@ -19,9 +17,9 @@ namespace MF
 
 		public override TaskStatus OnUpdate()
 		{
-			if (Time.time - lastTime > 0.2f && Actor.Model.Energy.Value < 98f)
+			if (Time.time - lastTime > 0.2f && Actor.Model.Hunger.Value < 98f)
 			{
-				Actor.Model.Energy.Value += 2.0f;
+				Actor.Model.Hunger.Value += 2.0f;
 				lastTime = Time.time;
 			}
 			return TaskStatus.Running;

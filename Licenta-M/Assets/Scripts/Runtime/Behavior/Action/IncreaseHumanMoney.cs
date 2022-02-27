@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace MF
 {
+	[TaskDescription("This task increase money for human.")]
+	[TaskCategory("UtilityScore/Increase")]
 	public class IncreaseHumanMoney : BaseAction<HumanController>
 	{
 		private float lastTime;
