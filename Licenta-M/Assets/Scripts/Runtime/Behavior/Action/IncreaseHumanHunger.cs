@@ -4,7 +4,7 @@ using UnityEngine;
 namespace MF
 {
 	[TaskDescription("This task increase hunger for human.")]
-	[TaskCategory("UtilityScore/Increase")]
+	[TaskCategory("ActorModel/Increase")]
 	public class IncreaseHumanHunger : BaseAction<HumanController>
 	{
 		private float lastTime;
