@@ -19,7 +19,7 @@ namespace MF
 			humanModel.HungerDecreaseRate = HungerDecreaseRate;
 			humanModel.MoneyDecreaseRate = MoneyDecreaseRate;
 			humanModel.HealthDecreaseRate = HealthDecreaseRate;
-			humanModel.RestDecreaseRate = RestDecreaseRate;
+			humanModel.EnergyDecreaseRate = RestDecreaseRate;
 		}
 	}
 }

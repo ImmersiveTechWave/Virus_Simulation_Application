@@ -19,128 +19,138 @@ namespace MF
             this.controller = controller;
         }
 
-		public ActorBuilder WithModel<T>() where T : ActorModel, new()
-		{
-			model = new T();
+        public ActorBuilder WithModel<T>() where T : ActorModel, new()
+        {
+            model = new T();
 
-			return this;
-		}
+            return this;
+        }
 
-		public ActorBuilder WithModel(Type modelType)
-		{
-			if (!typeof(ActorModel).IsAssignableFrom(modelType))
-			{
-				Debug.LogError(
-					$"Tried to build actor [{controller}] with a model of type [{modelType}] but that does not inherit from {nameof(ActorModel)}");
-				return this;
-			}
+        public ActorBuilder WithModel(Type modelType)
+        {
+            if (!typeof(ActorModel).IsAssignableFrom(modelType))
+            {
+                Debug.LogError(
+                    $"Tried to build actor [{controller}] with a model of type [{modelType}] but that does not inherit from {nameof(ActorModel)}");
+                return this;
+            }
 
-			model = (ActorModel)Activator.CreateInstance(modelType);
+            model = (ActorModel)Activator.CreateInstance(modelType);
 
-			return this;
-		}
+            return this;
+        }
 
-		public ActorBuilder WithView<T>() where T : ActorView
-		{
-			if (view != null)
-			{
-				Object.Destroy(view);
-			}
+        public ActorBuilder WithView<T>() where T : ActorView
+        {
+            if (view != null)
+            {
+                Object.Destroy(view);
+            }
 
-			view = controller.gameObject.AddComponent<T>();
+            view = controller.gameObject.AddComponent<T>();
 
-			return this;
-		}
+            return this;
+        }
 
-		public ActorBuilder WithView(Type viewType)
-		{
-			if (!typeof(ActorView).IsAssignableFrom(viewType))
-			{
-				Debug.LogError(
-					$"Tried to build actor [{controller}] with a view of type [{viewType}] but that does not inherit from {nameof(ActorView)}");
-				return this;
-			}
+        public ActorBuilder WithView(Type viewType)
+        {
+            if (!typeof(ActorView).IsAssignableFrom(viewType))
+            {
+                Debug.LogError(
+                    $"Tried to build actor [{controller}] with a view of type [{viewType}] but that does not inherit from {nameof(ActorView)}");
+                return this;
+            }
 
-			view = (ActorView)Activator.CreateInstance(viewType);
+            view = (ActorView)Activator.CreateInstance(viewType);
 
-			return this;
-		}
+            return this;
+        }
 
-		public ActorBuilder WithMovement<T>() where T : Movement, new()
-		{
-			movement = new T();
+        public ActorBuilder WithMovement<T>() where T : Movement, new()
+        {
+            if (movement != null)
+            {
+                Object.Destroy(movement);
+            }
 
-			return this;
-		}
+            movement = controller.gameObject.AddComponent<T>();
 
-		public ActorBuilder WithMovement(Type movementType)
-		{
-			if (!typeof(Movement).IsAssignableFrom(movementType))
-			{
-				Debug.LogError(
-					$"Tried to build actor [{controller}] with a movement of type [{movementType}] but that does not inherit from {nameof(Movement)}");
-				return this;
-			}
+            return this;
+        }
 
-			movement = (Movement)Activator.CreateInstance(movementType);
+        public ActorBuilder WithMovement(Type movementType)
+        {
+            if (!typeof(Movement).IsAssignableFrom(movementType))
+            {
+                Debug.LogError(
+                    $"Tried to build actor [{controller}] with a movement of type [{movementType}] but that does not inherit from {nameof(Movement)}");
+                return this;
+            }
 
-			return this;
-		}
+            movement = (Movement)Activator.CreateInstance(movementType);
 
-		public ActorBuilder WithNervousSystem<T>() where T : NervousSystem, new()
-		{
-			nervousSystem = new T();
+            return this;
+        }
 
-			return this;
-		}
+        public ActorBuilder WithNervousSystem<T>() where T : NervousSystem, new()
+        {
+            if (nervousSystem != null)
+            {
+                Object.Destroy(movement);
+            }
 
-		public ActorBuilder WithNervousSystem(Type nervousSystemType)
-		{
-			if (!typeof(NervousSystem).IsAssignableFrom(nervousSystemType))
-			{
-				Debug.LogError(
-					$"Tried to build actor [{controller}] with a nervous system of type [{nervousSystemType}] but that does not inherit from {nameof(NervousSystem)}");
-				return this;
-			}
+            nervousSystem = controller.gameObject.AddComponent<T>();
 
-			nervousSystem = (NervousSystem)Activator.CreateInstance(nervousSystemType);
+            return this;
+        }
 
-			return this;
-		}
+        public ActorBuilder WithNervousSystem(Type nervousSystemType)
+        {
+            if (!typeof(NervousSystem).IsAssignableFrom(nervousSystemType))
+            {
+                Debug.LogError(
+                    $"Tried to build actor [{controller}] with a nervous system of type [{nervousSystemType}] but that does not inherit from {nameof(NervousSystem)}");
+                return this;
+            }
 
-		public ActorBuilder OnBuilt(Action onBuilt)
-		{
-			this.onBuilt = onBuilt;
+            nervousSystem = (NervousSystem)Activator.CreateInstance(nervousSystemType);
 
-			return this;
-		}
+            return this;
+        }
 
-		public void Build()
-		{
-			// ensure default construction of all components
-			model ??= new ActorModel();
-			view ??= controller.gameObject.AddComponent<ActorView>();
-			movement ??= controller.gameObject.AddComponent<Movement>();
-			nervousSystem ??= controller.gameObject.AddComponent<NervousSystem>();
+        public ActorBuilder OnBuilt(Action onBuilt)
+        {
+            this.onBuilt = onBuilt;
 
-			controller.Model = model;
-			controller.View = view;
-			controller.Movement = movement;
-			controller.NervousSystem = nervousSystem;
+            return this;
+        }
 
-			controller.Configurator.Configure(model);
+        public void Build()
+        {
+            // ensure default construction of all components
+            model ??= new ActorModel();
+            view ??= controller.gameObject.AddComponent<ActorView>();
+            movement ??= controller.gameObject.AddComponent<Movement>();
+            nervousSystem ??= controller.gameObject.AddComponent<NervousSystem>();
 
-		
-			movement.Initialize(controller);
-			nervousSystem.Initialize(controller);
-		
+            controller.Model = model;
+            controller.View = view;
+            controller.Movement = movement;
+            controller.NervousSystem = nervousSystem;
 
-			model = null;
-			view = null;
-			movement = null;
-			nervousSystem = null;
+            controller.Configurator.Configure(model);
 
-			onBuilt?.Invoke();
-		}
-	}
+
+            movement.Initialize(controller);
+            nervousSystem.Initialize(controller);
+
+
+            model = null;
+            view = null;
+            movement = null;
+            nervousSystem = null;
+
+            onBuilt?.Invoke();
+        }
+    }
 }

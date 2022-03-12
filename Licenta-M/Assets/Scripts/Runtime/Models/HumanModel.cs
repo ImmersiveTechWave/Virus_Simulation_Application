@@ -9,6 +9,6 @@ namespace MF
 		public float HungerDecreaseRate;
 		public float MoneyDecreaseRate;
 		public float HealthDecreaseRate;
-		public float RestDecreaseRate;
+		public float EnergyDecreaseRate;
 	}
 }

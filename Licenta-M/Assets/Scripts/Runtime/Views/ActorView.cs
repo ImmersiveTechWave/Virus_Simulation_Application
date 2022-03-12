@@ -21,6 +21,7 @@ namespace MF
             Seeker = gameObject.AddComponent<Seeker>();
             RichAi = gameObject.AddComponent<RichAI>();
             SmoothModifier = gameObject.AddComponent<SimpleSmoothModifier>();
+            BehaviorTree = gameObject.GetComponent<BehaviorTree>();
         }
     }
 }
