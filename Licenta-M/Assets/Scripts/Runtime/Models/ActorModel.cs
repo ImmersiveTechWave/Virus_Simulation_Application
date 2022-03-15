@@ -22,5 +22,10 @@ namespace MF
 		public Observable<float> RunSpeed = new Observable<float>();
 
 		public List<GameObject> WanderPoints = new List<GameObject>();
+
+		/// <summary>
+		/// The actor's current velocity
+		/// </summary>
+		public Vector3 CurrentVelocity { get; set; }
 	}
 }
