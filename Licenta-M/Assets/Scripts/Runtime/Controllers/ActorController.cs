@@ -36,6 +36,11 @@ namespace MF
 		public Movement Movement { get; set; }
 
 		/// <summary>
+		/// The actor's anima (handles animations and animation events)
+		/// </summary>
+		public Anima Anima { get; set; }
+
+		/// <summary>
 		/// Whether or not the actor is enabled (wrapper over <see cref="GameObject.activeInHierarchy"/>)
 		/// </summary>
 		public bool IsEnabled => gameObject.activeInHierarchy;
@@ -48,6 +53,17 @@ namespace MF
 		public virtual void Start()
 		{
 			InitializeModelCallbacks();
+		}
+
+		/// <summary>
+		/// Triggers an animation event in the actor's anima.
+		///
+		/// <para>Note: this should only be called from the actor's animation clip events.</para>
+		/// </summary>
+		/// <param name="eventId">the ID of the animation event to trigger</param>
+		public void AnimationEventTriggered(string eventId)
+		{
+			Anima.TriggerEvent(eventId);
 		}
 
 		protected virtual void InitializeModelCallbacks()

@@ -23,8 +23,8 @@ namespace MF
         [Range(0f, 100f)] public float Money = 100f;
 
         [Header("Movement")]
-        public float MovementSpeed = 3f;
-        public float WalkSpeed = 3f;
+        public float MovementSpeed = 2f;
+        public float WalkSpeed = 2f;
         public float RunSpeed = 6f;
         public List<GameObject> WanderPoints = new List<GameObject>();
 
