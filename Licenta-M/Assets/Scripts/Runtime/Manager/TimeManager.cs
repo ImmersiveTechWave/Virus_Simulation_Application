@@ -1,14 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace MF
 {
+
 	public class TimeManager : MonoBehaviour
 	{
 		public float StartTime { get; set; }
-		public int Hours { get; set; }
-		public int Minutes { get; set; }
-		public int Seconds { get; set; }
+		public TimeModel TimeModel { get; set; }
+
+		public TMP_Text TimeText;
+
+		private void Awake()
+		{
+			TimeModel = new TimeModel();
+		}
 
 		private void Start()
 		{
@@ -17,10 +24,11 @@ namespace MF
 
 		void Update()
 		{
-			Seconds = (int)((Time.time - StartTime) % 60);
-			Minutes = (int)((Time.time - StartTime) / 60) % 60;
-			Hours = (int)((Time.time - StartTime) / 3600) % 60;
-			string newTime = string.Format("{0:0}:{1:00}:{2:00}", Hours, Minutes, Seconds);
+			TimeModel.Seconds = (int)((Time.time - StartTime) % 60);
+			TimeModel.Minutes = (int)((Time.time - StartTime) / 60) % 60;
+			TimeModel.Hours = (int)((Time.time - StartTime) / 3600) % 60;
+			string newTime = string.Format("{0:0}:{1:00}:{2:00}", TimeModel.Hours, TimeModel.Minutes, TimeModel.Seconds);
+			TimeText.text = newTime;
 		}
 	}
 }
