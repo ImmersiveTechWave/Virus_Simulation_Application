@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: c8191a941d0d1404295da90a258fea82
 ModelImporter:
-  serializedVersion: 20101
+  serializedVersion: 21202
   internalIDToNameTable:
   - first:
       1: 100000
@@ -371,21 +371,19 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
       copied configuration does not match position in animation file:\n\t'Ch01 L
-      Thigh' : position error = 78.478096 mm\n\t'Ch01 R Thigh' : position error =
-      58.060871 mm\n"
+      Thigh' : position error = 155.382706 mm\n\t'Ch01 L Calf' : position error =
+      344.760834 mm\n\t'Ch01 L Foot' : position error = 390.689606 mm\n\t'Ch01 L
+      Toe0' : position error = 152.991852 mm\n\t'Ch01 R Thigh' : position error =
+      155.315689 mm\n\t'Ch01 R Calf' : position error = 344.760925 mm\n\t'Ch01 R
+      Foot' : position error = 390.689606 mm\n\t'Ch01 R Toe0' : position error =
+      152.991882 mm\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Ch01 Spine' has translation animation that
-      will be discarded.\n\t'Ch01 Spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'Ch01 L Clavicle' has translation
-      animation that will be discarded.\n\t'Ch01 R Clavicle' has translation animation
-      that will be discarded.\n\t'Ch01 L Thigh' has translation animation that will
-      be discarded.\n\t'Ch01 R Thigh' has translation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -620,6 +618,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -631,6 +630,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
@@ -1078,132 +1078,132 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Ch01
       parentName: Idle(Clone)
-      position: {x: 0.00012596606, y: 0.7006978, z: -0.043837268}
+      position: {x: 0.012596606, y: 70.06978, z: -4.3837266}
       rotation: {x: -0.43823576, y: 0.5392743, z: 0.5689029, w: 0.43986613}
       scale: {x: 1.0000001, y: 1, z: 1}
     - name: Ch01 Pelvis
       parentName: Ch01
-      position: {x: 0.0008710901, y: 0.035380304, z: 0.0436387}
+      position: {x: 0.08710901, y: 3.5380304, z: 4.3638697}
       rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Ch01 Spine
       parentName: Ch01 Pelvis
-      position: {x: -0.11173126, y: -0.00009670258, z: -0.000001654625}
+      position: {x: -11.173126, y: -0.009670258, z: -0.0001654625}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1.0000002, z: 1}
     - name: Ch01 Spine1
       parentName: Ch01 Spine
-      position: {x: -0.12168068, y: -0.000096807475, z: -0.0000032687187}
+      position: {x: -12.168068, y: -0.009680747, z: -0.00032687187}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1, z: 1}
     - name: Ch01 Spine2
       parentName: Ch01 Spine1
-      position: {x: -0.121674575, y: -0.000121440884, z: -0.0000040578843}
+      position: {x: -12.167458, y: -0.012144089, z: -0.00040578842}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: Ch01 Neck
       parentName: Ch01 Spine2
-      position: {x: -0.15338653, y: -0.0065670395, z: -0.0000014642626}
+      position: {x: -15.338654, y: -0.65670395, z: -0.00014642626}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: Ch01 Head
       parentName: Ch01 Neck
-      position: {x: -0.07167869, y: 0.000000038146972, z: -0.0000000011920929}
+      position: {x: -7.167869, y: 0.0000038146973, z: -0.00000011920929}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Ch01 L Clavicle
       parentName: Ch01 Neck
-      position: {x: 0.044208754, y: 0.00008125305, z: 0.025467353}
+      position: {x: 4.4208755, y: 0.008125305, z: 2.5467353}
       rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: Ch01 L UpperArm
       parentName: Ch01 L Clavicle
-      position: {x: -0.11755109, y: 0, z: 0}
+      position: {x: -11.755109, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
     - name: Ch01 L Forearm
       parentName: Ch01 L UpperArm
-      position: {x: -0.21644798, y: 0, z: -0.000000038146972}
+      position: {x: -21.644798, y: 0, z: -0.0000038146973}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.9999999, y: 0.9999999, z: 1}
     - name: Ch01 L Hand
       parentName: Ch01 L Forearm
-      position: {x: -0.19113594, y: -0.000000009536743, z: 0}
+      position: {x: -19.113594, y: -0.0000009536743, z: 0}
       rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
       scale: {x: 0.9999998, y: 0.99999994, z: 1.0000001}
     - name: Ch01 L Finger0
       parentName: Ch01 L Hand
-      position: {x: -0.022021025, y: 0.01005558, z: -0.024069948}
+      position: {x: -2.2021027, y: 1.005558, z: -2.4069948}
       rotation: {x: 0, y: 0.3826835, z: 0, w: -0.9238795}
       scale: {x: 0.9999999, y: 1.0000002, z: 0.9999997}
     - name: Ch01 L Finger01
       parentName: Ch01 L Finger0
-      position: {x: -0.021937178, y: 0.000000038146972, z: -0.000000009536743}
+      position: {x: -2.193718, y: 0.0000038146973, z: -0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.99999994, y: 1, z: 0.9999998}
     - name: Ch01 L Finger02
       parentName: Ch01 L Finger01
-      position: {x: -0.021278687, y: -0.000000019073486, z: 0}
+      position: {x: -2.1278687, y: -0.0000019073486, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
     - name: Ch01 L Finger1
       parentName: Ch01 L Hand
-      position: {x: -0.07737122, y: -0.00070178986, z: -0.027935667}
+      position: {x: -7.7371216, y: -0.070178986, z: -2.7935667}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000002, y: 0.9999998, z: 1.0000004}
     - name: Ch01 L Finger11
       parentName: Ch01 L Finger1
-      position: {x: -0.020724868, y: -0.000000009536743, z: 0}
+      position: {x: -2.0724869, y: -0.0000009536743, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: Ch01 L Finger12
       parentName: Ch01 L Finger11
-      position: {x: -0.020724945, y: 0, z: 0}
+      position: {x: -2.0724945, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 0.99999994, z: 1}
     - name: Ch01 L Finger2
       parentName: Ch01 L Hand
-      position: {x: -0.07763813, y: -0.000020103455, z: -0.007360668}
+      position: {x: -7.7638125, y: -0.0020103455, z: -0.7360668}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.9999998, y: 1.0000001, z: 1.0000001}
     - name: Ch01 L Finger21
       parentName: Ch01 L Finger2
-      position: {x: -0.02552101, y: 0.000000009536743, z: 0.000000009536743}
+      position: {x: -2.5521011, y: 0.0000009536743, z: 0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
     - name: Ch01 L Finger22
       parentName: Ch01 L Finger21
-      position: {x: -0.019458007, y: 0, z: 0}
+      position: {x: -1.9458007, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.99999994, y: 0.9999999, z: 1.0000001}
     - name: Ch01 L Finger3
       parentName: Ch01 L Hand
-      position: {x: -0.077638246, y: -0.00001033783, z: 0.012883186}
+      position: {x: -7.7638245, y: -0.001033783, z: 1.2883186}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.9999995, y: 0.9999998, z: 1}
     - name: Ch01 L Finger31
       parentName: Ch01 L Finger3
-      position: {x: -0.020724868, y: -0.000000019073486, z: 0}
+      position: {x: -2.0724869, y: -0.0000019073486, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: Ch01 L Finger32
       parentName: Ch01 L Finger31
-      position: {x: -0.018982695, y: 0, z: -0.000000028610229}
+      position: {x: -1.8982695, y: 0, z: -0.000002861023}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.99999994, y: 1, z: 0.9999998}
     - name: Ch01 L Finger4
       parentName: Ch01 L Hand
-      position: {x: -0.07741165, y: 0.0005103302, z: 0.031406984}
+      position: {x: -7.741165, y: 0.05103302, z: 3.1406984}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.9999997, y: 1.0000001, z: 1}
     - name: Ch01 L Finger41
       parentName: Ch01 L Finger4
-      position: {x: -0.0143591305, y: -0.000000019073486, z: 0.000000009536743}
+      position: {x: -1.4359131, y: -0.0000019073486, z: 0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1.0000001}
     - name: Ch01 L Finger42
       parentName: Ch01 L Finger41
-      position: {x: -0.01451126, y: 0, z: -0.000000009536743}
+      position: {x: -1.451126, y: 0, z: -0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Ch01 L ForeTwist
@@ -1213,102 +1213,102 @@ ModelImporter:
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: Ch01 L ForeTwist1
       parentName: Ch01 L ForeTwist
-      position: {x: -0.09556793, y: -0.000000038146972, z: 0}
+      position: {x: -9.556792, y: -0.0000038146973, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: Ch01 R Clavicle
       parentName: Ch01 Neck
-      position: {x: 0.045192335, y: -0.0011724472, z: -0.023646101}
+      position: {x: 4.5192337, y: -0.11724472, z: -2.3646102}
       rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
       scale: {x: 1.0000001, y: 1, z: 1}
     - name: Ch01 R UpperArm
       parentName: Ch01 R Clavicle
-      position: {x: -0.11755107, y: 0, z: 0}
+      position: {x: -11.755107, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.99999994, y: 1, z: 0.9999999}
     - name: Ch01 R Forearm
       parentName: Ch01 R UpperArm
-      position: {x: -0.21644798, y: -0.000000038146972, z: 0}
+      position: {x: -21.644798, y: -0.0000038146973, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.9999999, y: 1.0000001, z: 1}
     - name: Ch01 R Hand
       parentName: Ch01 R Forearm
-      position: {x: -0.19113585, y: 0, z: 0}
+      position: {x: -19.113585, y: 0, z: 0}
       rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
       scale: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
     - name: Ch01 R Finger0
       parentName: Ch01 R Hand
-      position: {x: -0.022021025, y: 0.010055542, z: 0.024069948}
+      position: {x: -2.2021027, y: 1.0055542, z: 2.4069948}
       rotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
       scale: {x: 0.9999998, y: 1.0000001, z: 0.99999964}
     - name: Ch01 R Finger01
       parentName: Ch01 R Finger0
-      position: {x: -0.021937178, y: 0, z: 0.000000009536743}
+      position: {x: -2.193718, y: 0, z: 0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
     - name: Ch01 R Finger02
       parentName: Ch01 R Finger01
-      position: {x: -0.021278763, y: 0.000000019073486, z: 0}
+      position: {x: -2.1278763, y: 0.0000019073486, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1.0000001, z: 1.0000002}
     - name: Ch01 R Finger1
       parentName: Ch01 R Hand
-      position: {x: -0.07766647, y: -0.0018231582, z: 0.027653798}
+      position: {x: -7.766647, y: -0.18231583, z: 2.76538}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000005, y: 0.99999964, z: 1.0000005}
     - name: Ch01 R Finger11
       parentName: Ch01 R Finger1
-      position: {x: -0.020724868, y: 0.000000009536743, z: -0.000000009536743}
+      position: {x: -2.0724869, y: 0.0000009536743, z: -0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.9999999, y: 0.99999994, z: 1}
     - name: Ch01 R Finger12
       parentName: Ch01 R Finger11
-      position: {x: -0.020724868, y: -0.000000019073486, z: 0}
+      position: {x: -2.0724869, y: -0.0000019073486, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 0.99999994}
     - name: Ch01 R Finger2
       parentName: Ch01 R Hand
-      position: {x: -0.077638164, y: -0.000020065307, z: 0.0073606586}
+      position: {x: -7.7638164, y: -0.0020065308, z: 0.73606586}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.9999998, y: 1, z: 0.9999999}
     - name: Ch01 R Finger21
       parentName: Ch01 R Finger2
-      position: {x: -0.02552101, y: -0.000000009536743, z: 0}
+      position: {x: -2.5521011, y: -0.0000009536743, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch01 R Finger22
       parentName: Ch01 R Finger21
-      position: {x: -0.01945793, y: -0.000000038146972, z: 0.000000009536743}
+      position: {x: -1.945793, y: -0.0000038146973, z: 0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000002, y: 1, z: 1}
     - name: Ch01 R Finger3
       parentName: Ch01 R Hand
-      position: {x: -0.077638246, y: -0.00001033783, z: -0.012883196}
+      position: {x: -7.7638245, y: -0.001033783, z: -1.2883196}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.99999934, y: 0.9999997, z: 0.99999976}
     - name: Ch01 R Finger31
       parentName: Ch01 R Finger3
-      position: {x: -0.020724868, y: 0.000000019073486, z: 0}
+      position: {x: -2.0724869, y: 0.0000019073486, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Ch01 R Finger32
       parentName: Ch01 R Finger31
-      position: {x: -0.018982695, y: -0.000000038146972, z: -0.000000009536743}
+      position: {x: -1.8982695, y: -0.0000038146973, z: -0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: Ch01 R Finger4
       parentName: Ch01 R Hand
-      position: {x: -0.07741165, y: 0.0005103683, z: -0.031406973}
+      position: {x: -7.741165, y: 0.05103683, z: -3.1406972}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.9999997, y: 1, z: 1}
     - name: Ch01 R Finger41
       parentName: Ch01 R Finger4
-      position: {x: -0.014359054, y: 0.000000019073486, z: 0.000000009536743}
+      position: {x: -1.4359055, y: 0.0000019073486, z: 0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 0.9999999, z: 1}
     - name: Ch01 R Finger42
       parentName: Ch01 R Finger41
-      position: {x: -0.014511298, y: -0.000000038146972, z: -0.000000019073486}
+      position: {x: -1.4511298, y: -0.0000038146973, z: -0.0000019073486}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Ch01 R ForeTwist
@@ -1318,47 +1318,47 @@ ModelImporter:
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
     - name: Ch01 R ForeTwist1
       parentName: Ch01 R ForeTwist
-      position: {x: -0.09556793, y: -0.000000009536743, z: -0.000000038146972}
+      position: {x: -9.556792, y: -0.0000009536743, z: -0.0000038146973}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch01 L Thigh
       parentName: Ch01 Spine
-      position: {x: 0.111864544, y: 0.0071821306, z: 0.07237105}
+      position: {x: 11.186455, y: 0.7182131, z: 7.237105}
       rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
       scale: {x: 0.99999994, y: 1, z: 0.99999994}
     - name: Ch01 L Calf
       parentName: Ch01 L Thigh
-      position: {x: -0.29632875, y: 0, z: -0.000000009536743}
+      position: {x: -29.632875, y: 0, z: -0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: Ch01 L Foot
       parentName: Ch01 L Calf
-      position: {x: -0.33580542, y: 0, z: 0.000000009536743}
+      position: {x: -33.580544, y: 0, z: 0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1, z: 1.0000001}
     - name: Ch01 L Toe0
       parentName: Ch01 L Foot
-      position: {x: -0.08740103, y: 0.0982506, z: 0}
+      position: {x: -8.740103, y: 9.82506, z: 0}
       rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
       scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
     - name: Ch01 R Thigh
       parentName: Ch01 Spine
-      position: {x: 0.11127945, y: 0.0046952055, z: -0.073465206}
+      position: {x: 11.127945, y: 0.46952054, z: -7.3465204}
       rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: Ch01 R Calf
       parentName: Ch01 R Thigh
-      position: {x: -0.29632884, y: 0.000000009536743, z: 0}
+      position: {x: -29.632885, y: 0.0000009536743, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: Ch01 R Foot
       parentName: Ch01 R Calf
-      position: {x: -0.33580542, y: 0.000000009536743, z: -0.000000009536743}
+      position: {x: -33.580544, y: 0.0000009536743, z: -0.0000009536743}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 0.9999998, y: 1.0000001, z: 1}
     - name: Ch01 R Toe0
       parentName: Ch01 R Foot
-      position: {x: -0.08740105, y: 0.09825061, z: 0.000000009536743}
+      position: {x: -8.740105, y: 9.825061, z: 0.0000009536743}
       rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
       scale: {x: 0.99999994, y: 1, z: 0.9999999}
     armTwist: 0.5
@@ -1368,16 +1368,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: root
     hasTranslationDoF: 1
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b7ccca9ac5bb1cb4783eca4601f72ee4, type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b7ccca9ac5bb1cb4783eca4601f72ee4,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

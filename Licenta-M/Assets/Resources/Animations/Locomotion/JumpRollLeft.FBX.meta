@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 806dbfb27da665b45830e21eeda1a5ad
 ModelImporter:
-  serializedVersion: 20101
+  serializedVersion: 21202
   internalIDToNameTable:
   - first:
       1: 100000
@@ -371,23 +371,15 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
       copied configuration does not match position in animation file:\n\t'Ch01 L
-      Thigh' : position error = 17.459452 mm\n\t'Ch01 R Thigh' : position error =
-      15.348572 mm\n"
+      Thigh' : position error = 6.960052 mm\n\t'Ch01 R Thigh' : position error =
+      7.609272 mm\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Ch01 Pelvis' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'Ch01 Spine' has translation
-      animation that will be discarded.\n\t'Ch01 Spine' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'Ch01 L Clavicle' has
-      translation animation that will be discarded.\n\t'Ch01 R Clavicle' has translation
-      animation that will be discarded.\n\t'Ch01 L Thigh' has translation animation
-      that will be discarded.\n\t'Ch01 R Thigh' has translation animation that will
-      be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -622,6 +614,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -633,6 +626,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
@@ -1375,11 +1369,13 @@ ModelImporter:
     hasTranslationDoF: 1
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b7ccca9ac5bb1cb4783eca4601f72ee4, type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b7ccca9ac5bb1cb4783eca4601f72ee4,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
