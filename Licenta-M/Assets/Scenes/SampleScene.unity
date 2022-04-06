@@ -22173,10 +22173,6 @@ PrefabInstance:
       value: SM_Env_Sidewalk_Panel_03
       objectReference: {fileID: 0}
     - target: {fileID: 183674, guid: f0924feddc9f45147a1b3b077269f520, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 183674, guid: f0924feddc9f45147a1b3b077269f520, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -45761,10 +45757,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 946243784}
     m_Modifications:
     - target: {fileID: 146688, guid: 8bb0b83b7824d964fa1d723d2bddb75e, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 146688, guid: 8bb0b83b7824d964fa1d723d2bddb75e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -47253,10 +47245,6 @@ PrefabInstance:
       value: SM_Env_Sidewalk_Dip_Corner_16
       objectReference: {fileID: 0}
     - target: {fileID: 152188, guid: d61bd59519ec86446a34df8af9f85be5, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 152188, guid: d61bd59519ec86446a34df8af9f85be5, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -47801,10 +47789,6 @@ PrefabInstance:
     - target: {fileID: 128872, guid: 0c0aeb13e5f9e324ebd2bef52c75b6a2, type: 3}
       propertyPath: m_Name
       value: SM_Env_GrassPath_Straight_06
-      objectReference: {fileID: 0}
-    - target: {fileID: 128872, guid: 0c0aeb13e5f9e324ebd2bef52c75b6a2, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 401836, guid: 0c0aeb13e5f9e324ebd2bef52c75b6a2, type: 3}
       propertyPath: m_RootOrder
@@ -135244,10 +135228,6 @@ PrefabInstance:
       value: SM_Env_Sidewalk_Straight_161
       objectReference: {fileID: 0}
     - target: {fileID: 195910, guid: ae7b8255185ace64ca379cb1ca3b24e6, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 195910, guid: ae7b8255185ace64ca379cb1ca3b24e6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -163334,10 +163314,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_GrassPath_Straight_07
       objectReference: {fileID: 0}
-    - target: {fileID: 128872, guid: 0c0aeb13e5f9e324ebd2bef52c75b6a2, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 401836, guid: 0c0aeb13e5f9e324ebd2bef52c75b6a2, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -180621,10 +180597,6 @@ PrefabInstance:
     - target: {fileID: 195910, guid: ae7b8255185ace64ca379cb1ca3b24e6, type: 3}
       propertyPath: m_Name
       value: SM_Env_Sidewalk_Straight_93
-      objectReference: {fileID: 0}
-    - target: {fileID: 195910, guid: ae7b8255185ace64ca379cb1ca3b24e6, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 195910, guid: ae7b8255185ace64ca379cb1ca3b24e6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -264300,10 +264272,6 @@ PrefabInstance:
       value: SM_Env_Sidewalk_Straight_95
       objectReference: {fileID: 0}
     - target: {fileID: 195910, guid: ae7b8255185ace64ca379cb1ca3b24e6, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 195910, guid: ae7b8255185ace64ca379cb1ca3b24e6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -277928,10 +277896,6 @@ PrefabInstance:
     - target: {fileID: 198914, guid: 260ea4bf1ba71314c9c3833b491586bc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Sidewalk_67 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 198914, guid: 260ea4bf1ba71314c9c3833b491586bc, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 198914, guid: 260ea4bf1ba71314c9c3833b491586bc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -292660,7 +292624,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: b4dff6c29a7a89742b621d7c179a4b92, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
