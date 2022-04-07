@@ -25,7 +25,7 @@ namespace MF
         [Header("Movement")]
         public float MovementSpeed = 2f;
         public float WalkSpeed = 2f;
-        public float RunSpeed = 6f;
+        public float RunSpeed = 4f;
         public List<GameObject> WanderPoints = new List<GameObject>();
 
         public virtual void Configure(ActorModel model)

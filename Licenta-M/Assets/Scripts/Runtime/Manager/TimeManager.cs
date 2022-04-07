@@ -26,7 +26,10 @@ namespace MF
 			TimeModel.Minutes = (int)((Time.time - startTime) / 60) % 60;
 			TimeModel.Hours = (int)((Time.time - startTime) / 3600) % 60;
 			var newTime = string.Format("{0:0}:{1:00}:{2:00}", TimeModel.Hours, TimeModel.Minutes, TimeModel.Seconds);
-			TimeText.text = newTime;
+			if (TimeText != null)
+			{
+				TimeText.text = newTime;
+			}
 		}
 	}
 }

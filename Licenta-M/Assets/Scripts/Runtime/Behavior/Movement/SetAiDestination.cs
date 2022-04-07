@@ -1,11 +1,16 @@
+using BehaviorDesigner.Runtime;
+using BehaviorDesigner.Runtime.Tasks;
+
 namespace MF
 {
-	public class SetAiDestination : BaseAction<ActorController>
+	public class SetAIDestination : BaseAction<ActorController>
 	{
+		[RequiredField] public SharedGameObject ActorGameObject;
+
 		public override void OnStart()
 		{
 			base.OnStart();
-			Actor.Movement.AiDestination = Actor.transform.position;
+			Actor.Movement.AiDestination = ActorGameObject.Value.transform.position;
 		}
 	}
 }
