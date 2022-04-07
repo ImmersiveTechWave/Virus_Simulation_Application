@@ -23,6 +23,14 @@ namespace MF
 
 		public List<GameObject> WanderPoints = new List<GameObject>();
 
+		public GameObject HomePosition;
+
+		public GameObject HospitalPosition;
+
+		public GameObject MarketPosition;
+
+		public GameObject JobPosition;
+
 		/// <summary>
 		/// The actor's current velocity
 		/// </summary>

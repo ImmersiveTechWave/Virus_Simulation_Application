@@ -87,7 +87,7 @@ namespace MF
 
 		private void SetRichAiSpeed(float speed)
 		{
-			var newSpeed = speed / 4;
+			var newSpeed = speed;
 			Actor.View.RichAi.maxSpeed = newSpeed;
 			Actor.View.RichAi.acceleration = newSpeed;
 		}
