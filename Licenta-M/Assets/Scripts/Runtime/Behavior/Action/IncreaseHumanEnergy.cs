@@ -24,6 +24,12 @@ namespace MF
 				Actor.Model.Energy.Value += 2.0f;
 				lastTime = Time.time;
 			}
+
+			if (Actor.Model.Energy.Value > 80f)
+			{
+				return TaskStatus.Success;
+			}
+
 			return TaskStatus.Running;
 		}
 	}
