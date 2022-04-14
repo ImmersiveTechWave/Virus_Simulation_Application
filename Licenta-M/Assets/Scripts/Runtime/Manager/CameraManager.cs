@@ -14,20 +14,5 @@ namespace MF
 		{
 			Camera = transform.Find(CAMERA_NAME).GetComponent<CameraController>();
 		}
-
-		private void Start()
-		{
-			ChangeToTopViewCamera();
-		}
-
-		public void ChangeToTopViewCamera()
-		{ 
-			Camera.EnterState();
-		}
-
-		public void ChangeToFreeRoamCamera()
-		{
-			Camera.ExitState();
-		}
 	}
 }

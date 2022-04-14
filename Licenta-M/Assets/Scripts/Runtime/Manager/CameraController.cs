@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MF
 {
-	public class CameraController : BaseCameraController
+	public class CameraController : MonoBehaviour
 	{
 		private const float CAMERA_MOVEMENT = 10f;
 		private const float CAMERA_ROTATION = 1f;
@@ -12,11 +12,8 @@ namespace MF
 
 		private void Update()
 		{
-			if (ThisIsTheMainCamera)
-			{
-				ConsumeUserMovementInput();
-				ConsumeUserRotationInput();
-			}
+			ConsumeUserMovementInput();
+			ConsumeUserRotationInput();
 		}
 
 		private void ConsumeUserMovementInput()
@@ -67,16 +64,6 @@ namespace MF
 			{
 				mouseIsDown = false;
 			}
-		}
-
-		public override void EnterState()
-		{
-			base.EnterState();
-		}
-
-		public override void ExitState()
-		{
-			base.ExitState();
 		}
 	}
 }
