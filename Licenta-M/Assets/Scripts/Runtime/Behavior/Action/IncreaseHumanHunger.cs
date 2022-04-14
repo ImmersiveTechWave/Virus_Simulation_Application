@@ -22,6 +22,12 @@ namespace MF
 				Actor.Model.Hunger.Value += 2.0f;
 				lastTime = Time.time;
 			}
+
+			if (Actor.Model.Hunger.Value > 95f)
+			{
+				return TaskStatus.Success;
+			}
+
 			return TaskStatus.Running;
 		}
 	}

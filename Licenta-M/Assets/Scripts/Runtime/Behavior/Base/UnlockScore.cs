@@ -5,14 +5,14 @@ namespace MF
     [TaskCategory("UtilityScore")]
     public class UnlockScore : Action
     {
-        [RequiredField] public SharedUtilityScore ScoreToLock;
+        [RequiredField] public SharedUtilityScore ScoreToUnlock;
 
         public override void OnStart()
         {
             base.OnStart();
-            if (ScoreToLock != null)
+            if (ScoreToUnlock != null)
             {
-                ScoreToLock.Value = new UtilityScore(ScoreToLock.Value.Score, false);
+                ScoreToUnlock.Value = new UtilityScore(ScoreToUnlock.Value.Score, false);
             }
         }
     }

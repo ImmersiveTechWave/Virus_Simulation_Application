@@ -22,10 +22,12 @@ namespace MF
 				Actor.Model.Health.Value += 2.0f;
 				lastTime = Time.time;
 			}
-			if (Actor.Model.Health.Value > 99f)
+
+			if (Actor.Model.Health.Value > 95f)
 			{
 				return TaskStatus.Success;
 			}
+
 			return TaskStatus.Running;
 		}
 	}

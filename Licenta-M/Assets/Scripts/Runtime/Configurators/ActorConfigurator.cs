@@ -28,6 +28,12 @@ namespace MF
         public float RunSpeed = 4f;
         public List<GameObject> WanderPoints = new List<GameObject>();
 
+        [Header("Position To Go")]
+        public GameObject HomePosition;
+        public GameObject HospitalPosition;
+        public GameObject MarketPosition;
+        public GameObject JobPosition;
+
         public virtual void Configure(ActorModel model)
         {
             model.Guid = GetOrInitializeUniqueIdentifier();
@@ -40,6 +46,11 @@ namespace MF
             model.WalkSpeed.Value = WalkSpeed;
             model.RunSpeed.Value = RunSpeed;
             model.WanderPoints = WanderPoints;
+
+            model.HomePosition = HomePosition;
+            model.HospitalPosition = HospitalPosition;
+            model.MarketPosition = MarketPosition;
+            model.JobPosition = JobPosition;
         }
 
         private string GetOrInitializeUniqueIdentifier()
