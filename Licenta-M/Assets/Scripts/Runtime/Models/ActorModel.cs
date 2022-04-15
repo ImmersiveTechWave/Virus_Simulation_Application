@@ -3,6 +3,16 @@ using UnityEngine;
 
 namespace MF
 {
+	public enum Activities
+	{
+		IsWorking,
+		IsEating,
+		IsSlepping,
+		IsHealing,
+		IsMoving,
+		IsStaying
+	};
+
 	public class ActorModel
 	{
 		public string Guid;
@@ -22,6 +32,8 @@ namespace MF
 		public Observable<float> RunSpeed = new Observable<float>();
 
 		public List<GameObject> WanderPoints = new List<GameObject>();
+
+		public Activities CurrentActivity = Activities.IsStaying;
 
 		public GameObject HomePosition;
 
