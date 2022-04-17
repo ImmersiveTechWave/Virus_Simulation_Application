@@ -15,6 +15,7 @@ namespace MF
 		{
 			base.OnStart();
 			lastTime = Time.time;
+			Actor.Model.CurrentActivity = Activities.IsSlepping;
 		}
 
 		public override TaskStatus OnUpdate()
@@ -29,7 +30,7 @@ namespace MF
 			{
 				return TaskStatus.Success;
 			}
-
+		
 			return TaskStatus.Running;
 		}
 	}

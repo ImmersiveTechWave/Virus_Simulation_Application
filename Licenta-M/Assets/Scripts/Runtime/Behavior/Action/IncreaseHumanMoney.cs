@@ -13,6 +13,7 @@ namespace MF
 		{
 			base.OnStart();
 			lastTime = Time.time;
+			Actor.Model.CurrentActivity = Activities.IsWorking;
 		}
 
 		public override TaskStatus OnUpdate()

@@ -14,7 +14,7 @@ namespace MF
 			public static readonly GUIContent MONEY_SETTINGS = new GUIContent("Money", "Contains the money value of the actor.");
 			public static readonly GUIContent HUNGER_SETTINGS = new GUIContent("Hunger", "Contains the hunger value of the actor.");
 			public static readonly GUIContent CURRENT_VELOCITY_SETTINGS = new GUIContent("Current Velocity", "Contains the current velocity of the actor.");
-
+			public static readonly GUIContent ACTIVITY_SETTINGS = new GUIContent("Current Activity", "Contains the current activity of the actor.");
 		}
 
 		private bool showModelSettings = true;
@@ -41,6 +41,7 @@ namespace MF
 					EditorGUILayout.TextField(Styles.MONEY_SETTINGS, actor.Model.Money.Value.ToString());
 					EditorGUILayout.TextField(Styles.HUNGER_SETTINGS, actor.Model.Hunger.Value.ToString());
 					EditorGUILayout.TextField(Styles.CURRENT_VELOCITY_SETTINGS, actor.Model.CurrentVelocity.ToString());
+					EditorGUILayout.TextField(Styles.ACTIVITY_SETTINGS, actor.Model.CurrentActivity.ToString());
 
 					// read-write settings
 					GUI.enabled = true;

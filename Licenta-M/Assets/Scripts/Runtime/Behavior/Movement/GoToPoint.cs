@@ -11,6 +11,7 @@ namespace MF
 		{
 			base.OnStart();
 			Actor.Movement.AiDestination = TargetPosition.Value.transform.position;
+			Actor.Model.CurrentActivity = Activities.IsMoving;
 		}
 
 		public override TaskStatus OnUpdate()
