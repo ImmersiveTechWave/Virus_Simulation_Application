@@ -28,9 +28,18 @@ namespace MF
 				return Score.Value.Score;
 			}
 
-			var energy = Actor.Model.Energy.Value / 100f;
-			var score = Mathf.Sin(1.8f * energy + 1.6f) * 0.9f;
-			score = Mathf.Clamp(score, 0, 1);
+			var score = 0f;
+
+			if (App.TimeManager.TimeModel.Hours > Actor.Model.StartTimeModelToSleep.Hours && App.TimeManager.TimeModel.Hours < Actor.Model.EndTimeModelToSleep.Hours)
+			{
+				score = 1;
+			}
+			else
+			{
+				var energy = Actor.Model.Energy.Value / 100f;
+				score = Mathf.Sin(1.8f * energy + 1.6f) * 0.9f;
+				score = Mathf.Clamp(score, 0, 1);
+			}
 
 			Score.Value = new UtilityScore(score, false);
 
