@@ -63,7 +63,7 @@ namespace MF
 
 			if (Model.CurrentActivity == Activities.IsWorking)
 			{
-				decreseEnergy *= 3f;      // because human spends more time for doing something
+				decreseEnergy *= 3f;      // because human spends more time for doing work
 			}
 
 			if (Model.CurrentActivity == Activities.IsEating)
