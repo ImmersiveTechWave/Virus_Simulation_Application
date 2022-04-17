@@ -30,24 +30,23 @@ namespace MF
 		{
 			var decreseEnergyValue = 1f;
 
-			if (Model.CurrentActivity == Activities.IsWorking)
+			switch(Model.CurrentActivity)
 			{
-				decreseEnergyValue *= 3f;      // because human spends more time for doing work
-			}
-
-			if (Model.CurrentActivity == Activities.IsEating)
-			{
-				decreseEnergyValue *= 0.5f;      // because human eats
-			}
-
-			if (Model.CurrentActivity == Activities.IsSlepping)
-			{
-				decreseEnergyValue *= 0f;      // because human does`t lose energy when he sleeps
-			}
-
-			if (Model.CurrentActivity == Activities.IsMoving)
-			{
-				decreseEnergyValue *= 2f;      // because human moves
+				case Activities.IsWorking:
+					decreseEnergyValue *= 3f;	// because human spends more time for doing work
+					break;
+				case Activities.IsEating:
+					decreseEnergyValue *= 0.5f;      // because human eats
+					break;
+				case Activities.IsSlepping:
+					decreseEnergyValue *= 0f;      // because human does`t lose energy when he sleeps
+					break;
+				case Activities.IsMoving:
+					decreseEnergyValue *= 2f;      // because human moves
+					break;
+				default:
+					decreseEnergyValue *= 1f;
+					break;
 			}
 
 			modelEnergyValue = modelEnergyValue - decreseEnergyValue;
@@ -58,24 +57,23 @@ namespace MF
 		{
 			var decreseHungerValue = 1f;
 
-			if (Model.CurrentActivity == Activities.IsWorking)
+			switch (Model.CurrentActivity)
 			{
-				decreseHungerValue *= 4f;      // because human spends more time for doing something and lose more calories
-			}
-
-			if (Model.CurrentActivity == Activities.IsEating)
-			{
-				decreseHungerValue *= 0f;      // because human eats
-			}
-
-			if (Model.CurrentActivity == Activities.IsSlepping)
-			{
-				decreseHungerValue *= 0.5f;      // because human sleeps and he consumes some calories
-			}
-
-			if (Model.CurrentActivity == Activities.IsMoving)
-			{
-				decreseHungerValue *= 1.5f;      // because human moves  he consume calories
+				case Activities.IsWorking:
+					decreseHungerValue *= 4f;      // because human spends more time for doing something and lose more calories
+					break;
+				case Activities.IsEating:
+					decreseHungerValue *= 0f;      // because human eats
+					break;
+				case Activities.IsSlepping:
+					decreseHungerValue *= 0.5f;      // because human sleeps and he consumes some calories
+					break;
+				case Activities.IsMoving:
+					decreseHungerValue *= 1.5f;      // because human moves  he consume calories
+					break;
+				default:
+					decreseHungerValue *= 1f;
+					break;
 			}
 
 			modelHungerValue = modelHungerValue - decreseHungerValue;
@@ -86,24 +84,23 @@ namespace MF
 		{
 			var decreseMoneyValue = 1f;
 
-			if (Model.CurrentActivity == Activities.IsWorking)
+			switch (Model.CurrentActivity)
 			{
-				decreseMoneyValue *= 0f;      // because human earns money, doesn`t lose
-			}
-
-			if (Model.CurrentActivity == Activities.IsEating)
-			{
-				decreseMoneyValue *= 5f;      // because human eats
-			}
-
-			if (Model.CurrentActivity == Activities.IsSlepping)
-			{
-				decreseMoneyValue *= 0f;      // because human sleeps
-			}
-
-			if (Model.CurrentActivity == Activities.IsMoving)
-			{
-				decreseMoneyValue *= 0.5f;      // because human moves 
+				case Activities.IsWorking:
+					decreseMoneyValue *= 0f;      // because human earns money, doesn`t lose
+					break;
+				case Activities.IsEating:
+					decreseMoneyValue *= 5f;      // because human eats
+					break;
+				case Activities.IsSlepping:
+					decreseMoneyValue *= 0f;      // because human sleeps
+					break;
+				case Activities.IsMoving:
+					decreseMoneyValue *= 0.5f;      // because human moves 
+					break;
+				default:
+					decreseMoneyValue *= 1f;
+					break;
 			}
 
 			modelMoneyValue = modelMoneyValue - decreseMoneyValue;
