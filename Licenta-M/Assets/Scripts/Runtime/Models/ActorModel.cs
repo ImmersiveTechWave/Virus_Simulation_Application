@@ -35,6 +35,14 @@ namespace MF
 
 		public Activities CurrentActivity = Activities.IsStaying;
 
+		public TimeModel StartTimeModelToWork;
+
+		public TimeModel EndTimeModelToWork;
+
+		public TimeModel StartTimeModelToSleep;
+
+		public TimeModel EndTimeModelToSleep;
+
 		public GameObject HomePosition;
 
 		public GameObject HospitalPosition;

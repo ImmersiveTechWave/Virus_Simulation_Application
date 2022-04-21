@@ -28,9 +28,18 @@ namespace MF
 				return Score.Value.Score;
 			}
 
-			var money = Actor.Model.Money.Value / 100f;
-			var score = Mathf.Sin(1.8f * money + 1.6f) * 0.7f;
-			score = Mathf.Clamp(score, 0, 1);
+			var score = 0f;
+
+			if (App.TimeManager.TimeModel.Hours > Actor.Model.StartTimeModelToWork.Hours && App.TimeManager.TimeModel.Hours < Actor.Model.EndTimeModelToWork.Hours)
+			{
+				score = 1;
+			}
+			else
+			{
+				var money = Actor.Model.Money.Value / 100f;
+				score = Mathf.Sin(1.8f * money + 1.6f) * 0.7f;
+				score = Mathf.Clamp(score, 0, 1);
+			}
 
 			Score.Value = new UtilityScore(score, false);
 
