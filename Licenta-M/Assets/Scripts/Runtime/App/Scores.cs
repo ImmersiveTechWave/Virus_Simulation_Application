@@ -7,14 +7,14 @@ namespace MF
 	public class Scores : MonoBehaviour
 	{
 		public static float[] EnergyScore { get; private set; }
+		public static float[] FoodScore { get; private set; }
+		public static float[] HealthScore { get; private set; }
 
 		private void Start()
 		{
-			EnergyScore = ReadScore("TestScore");
-			foreach (var score in EnergyScore)
-			{
-				Debug.Log(score);
-			}
+			EnergyScore = ReadScore("EnergyScore");
+			FoodScore = ReadScore("FoodScore");
+			HealthScore = ReadScore("HealthScore");
 		}
 
 		private float[] ReadScore(string fileName)
