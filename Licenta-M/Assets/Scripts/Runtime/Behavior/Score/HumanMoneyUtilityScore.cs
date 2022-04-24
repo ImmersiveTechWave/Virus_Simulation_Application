@@ -1,3 +1,4 @@
+using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace MF
 	public class HumanMoneyUtilityScore : BaseAction<HumanController>
 	{
 		[RequiredField] public SharedUtilityScore Score;
+		[RequiredField] public SharedFloat MoneyScore;
 
 		public override float GetUtility()
 		{
@@ -28,21 +30,7 @@ namespace MF
 				return Score.Value.Score;
 			}
 
-			var score = 0f;
-
-			if (App.TimeManager.TimeModel.Hours > Actor.Model.StartTimeModelToWork.Hours && App.TimeManager.TimeModel.Hours < Actor.Model.EndTimeModelToWork.Hours)
-			{
-				score = 1;
-			}
-			else
-			{
-				var money = Actor.Model.Money.Value / 100f;
-				score = Mathf.Sin(1.8f * money + 1.6f) * 0.7f;
-				score = Mathf.Clamp(score, 0, 1);
-			}
-
-			Score.Value = new UtilityScore(score, false);
-
+			Score.Value = new UtilityScore(MoneyScore.Value, false);
 			return Score.Value.Score;
 		}
 	}
