@@ -1,3 +1,4 @@
+using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace MF
 	public class HumanHealthUtilityScore : BaseAction<HumanController>
 	{
 		[RequiredField] public SharedUtilityScore Score;
+		[RequiredField] public SharedFloat HealthScore;
 
 		public override float GetUtility()
 		{
@@ -28,11 +30,7 @@ namespace MF
 				return Score.Value.Score;
 			}
 
-			var health = Actor.Model.Health.Value / 100;
-			var score = Mathf.Sin(1.8f * health + 1.6f);
-			score = Mathf.Clamp(score, 0, 1);
-
-			Score.Value = new UtilityScore(score, false);
+			Score.Value = new UtilityScore(HealthScore.Value, false);
 
 			return Score.Value.Score;
 		}

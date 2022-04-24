@@ -1,3 +1,4 @@
+using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace MF
 	public class HumanHungryUtilityScore : BaseAction<HumanController>
 	{
 		[RequiredField] public SharedUtilityScore Score;
+		[RequiredField] public SharedFloat HungerScore;
 
 		public override float GetUtility()
 		{
@@ -28,11 +30,7 @@ namespace MF
 				return Score.Value.Score;
 			}
 
-			var hunger = Actor.Model.Hunger.Value / 100;
-			var score = Mathf.Sin(1.8f * hunger + 1.6f) * 0.8f;
-			score = Mathf.Clamp(score, 0, 1);
-
-			Score.Value = new UtilityScore(score, false);
+			Score.Value = new UtilityScore(HungerScore.Value, false);
 
 			return Score.Value.Score;
 		}
