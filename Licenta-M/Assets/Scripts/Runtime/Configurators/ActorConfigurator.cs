@@ -43,9 +43,9 @@ namespace MF
 		public List<GameObject> WanderPoints = new List<GameObject>();
 
 		[Header("Position To Go")]
-		public GameObject HomePosition;
-		public GameObject HospitalPosition;
-		public GameObject MarketPosition;
+		public BuildingController HomePosition;
+		public BuildingController HospitalPosition;
+		public BuildingController MarketPosition;
 		public BuildingController JobLocation;
 
 		[Header("Work Hours")]

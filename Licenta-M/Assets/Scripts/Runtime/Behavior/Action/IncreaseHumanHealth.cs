@@ -13,7 +13,13 @@ namespace MF
 		{
 			base.OnStart();
 			lastTime = Time.time;
+
 			Actor.Model.CurrentActivity = Activities.Healing;
+
+			if (Actor.CurrentBuilding != null && Actor.Model.CurrentActivity == Actor.CurrentBuilding.ActivityType)
+			{
+				Actor.MeshController.SkinnedMeshRenderer.enabled = false;
+			}
 		}
 
 		public override TaskStatus OnUpdate()
@@ -21,6 +27,7 @@ namespace MF
 			if (Time.time - lastTime > 0.2f && Actor.Model.Health.Value < 98f)
 			{
 				Actor.Model.Health.Value += 2.0f;
+				Actor.Model.Health.Value = Mathf.Clamp(Actor.Model.Health.Value, 0, 100);
 				lastTime = Time.time;
 			}
 
@@ -30,6 +37,12 @@ namespace MF
 			}
 
 			return TaskStatus.Running;
+		}
+
+		public override void OnEnd()
+		{
+			base.OnEnd();
+			Actor.MeshController.SkinnedMeshRenderer.enabled = true;
 		}
 	}
 }
