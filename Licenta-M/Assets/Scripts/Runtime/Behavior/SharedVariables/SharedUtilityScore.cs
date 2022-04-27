@@ -22,7 +22,7 @@ namespace MF
 
         public override string ToString()
         {
-            return "Score: " + Value.Score + " - " + Value.IsLocked;
+            return Value.Score + " - " + Value.IsLocked;
         }
     }
 }

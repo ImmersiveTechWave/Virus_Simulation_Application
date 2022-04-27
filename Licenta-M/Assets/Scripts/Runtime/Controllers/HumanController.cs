@@ -6,6 +6,7 @@ namespace MF
 	public class HumanController : CustomActorController<HumanModel, HumanView, Movement, NervousSystem>
 	{
 		private const float DECREASE_TIME = 1f;
+
 		private float lastTime;
 
 		public override void Start()
@@ -32,16 +33,16 @@ namespace MF
 
 			switch(Model.CurrentActivity)
 			{
-				case Activities.IsWorking:
+				case Activities.Working:
 					decreseEnergyValue *= 3f;	// because human spends more time for doing work
 					break;
-				case Activities.IsEating:
+				case Activities.Eating:
 					decreseEnergyValue *= 0.5f;      // because human eats
 					break;
-				case Activities.IsSlepping:
+				case Activities.Slepping:
 					decreseEnergyValue *= 0f;      // because human does`t lose energy when he sleeps
 					break;
-				case Activities.IsMoving:
+				case Activities.Moving:
 					decreseEnergyValue *= 2f;      // because human moves
 					break;
 				default:
@@ -59,16 +60,16 @@ namespace MF
 
 			switch (Model.CurrentActivity)
 			{
-				case Activities.IsWorking:
+				case Activities.Working:
 					decreseHungerValue *= 4f;      // because human spends more time for doing something and lose more calories
 					break;
-				case Activities.IsEating:
+				case Activities.Eating:
 					decreseHungerValue *= 0f;      // because human eats
 					break;
-				case Activities.IsSlepping:
+				case Activities.Slepping:
 					decreseHungerValue *= 0.5f;      // because human sleeps and he consumes some calories
 					break;
-				case Activities.IsMoving:
+				case Activities.Moving:
 					decreseHungerValue *= 1.5f;      // because human moves  he consume calories
 					break;
 				default:
@@ -86,16 +87,16 @@ namespace MF
 
 			switch (Model.CurrentActivity)
 			{
-				case Activities.IsWorking:
+				case Activities.Working:
 					decreseMoneyValue *= 0f;      // because human earns money, doesn`t lose
 					break;
-				case Activities.IsEating:
+				case Activities.Eating:
 					decreseMoneyValue *= 5f;      // because human eats
 					break;
-				case Activities.IsSlepping:
+				case Activities.Slepping:
 					decreseMoneyValue *= 0f;      // because human sleeps
 					break;
-				case Activities.IsMoving:
+				case Activities.Moving:
 					decreseMoneyValue *= 0.5f;      // because human moves 
 					break;
 				default:

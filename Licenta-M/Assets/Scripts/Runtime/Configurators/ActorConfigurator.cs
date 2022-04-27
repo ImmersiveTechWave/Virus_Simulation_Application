@@ -46,7 +46,7 @@ namespace MF
 		public GameObject HomePosition;
 		public GameObject HospitalPosition;
 		public GameObject MarketPosition;
-		public GameObject JobPosition;
+		public BuildingController JobLocation;
 
 		[Header("Work Hours")]
 		public TimaData startHoursToWork;
@@ -72,7 +72,7 @@ namespace MF
 			model.HomePosition = HomePosition;
 			model.HospitalPosition = HospitalPosition;
 			model.MarketPosition = MarketPosition;
-			model.JobPosition = JobPosition;
+			model.JobLocation = JobLocation;
 
 			model.StartTimeModelToWork = new TimeModel(startHoursToWork.Hour, startHoursToWork.Minute, 0);
 			model.EndTimeModelToWork = new TimeModel(endHoursToWork.Hour, endHoursToWork.Minute, 0);

@@ -9,7 +9,7 @@ namespace MF
 		[RequiredField] public SharedGameObject HomePosition;
 		[RequiredField] public SharedGameObject HospitalPosition;
 		[RequiredField] public SharedGameObject MarketPosition;
-		[RequiredField] public SharedGameObject JobPosition;
+		[RequiredField] public SharedVector3 JobPosition;
 
 		public override void OnStart()
 		{
@@ -17,7 +17,7 @@ namespace MF
 			ActorGameObject.Value = Actor.gameObject;
 			HospitalPosition.Value = Actor.Model.HospitalPosition;
 			MarketPosition.Value = Actor.Model.MarketPosition;
-			JobPosition.Value = Actor.Model.JobPosition;
+			JobPosition.Value = Actor.Model.JobLocation.GetRandomPosition();
 			HomePosition.Value = Actor.Model.HomePosition;
 		}
 	}

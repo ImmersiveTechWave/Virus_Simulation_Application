@@ -9,9 +9,21 @@ namespace MF
 	{
 		[RequiredField] public SharedFloat MoneyScore;
 
+		private int startTimeInMinutes = 0;
+		private int endTimeInMinutes = 0;
+
+		public override void OnStart()
+		{
+			base.OnStart();
+			startTimeInMinutes = Actor.Model.StartTimeModelToWork.Hours * 60 + Actor.Model.StartTimeModelToWork.Minutes;
+			endTimeInMinutes = Actor.Model.EndTimeModelToWork.Hours * 60 + Actor.Model.EndTimeModelToWork.Minutes;
+		}
+
 		public override TaskStatus OnUpdate()
 		{
-			if (Actor.Model.StartTimeModelToWork.Hours <= App.TimeManager.TimeModel.Hours && Actor.Model.EndTimeModelToWork.Hours >= App.TimeManager.TimeModel.Hours)
+			var currentTimeInMinutes = App.TimeManager.TimeModel.Hours * 60 + App.TimeManager.TimeModel.Minutes;
+
+			if (startTimeInMinutes <= currentTimeInMinutes && endTimeInMinutes >= currentTimeInMinutes)
 			{
 				MoneyScore.Value = 0.99f;
 			}

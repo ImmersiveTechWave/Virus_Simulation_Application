@@ -41,13 +41,24 @@ namespace MF
 		public Anima Anima { get; set; }
 
 		/// <summary>
-		/// Whether or not the actor is enabled (wrapper over <see cref="GameObject.activeInHierarchy"/>)
+		/// Whether or not the actor is enabled.
 		/// </summary>
 		public bool IsEnabled => gameObject.activeInHierarchy;
+
+		/// <summary>
+		/// The building where the actor is. 
+		/// </summary>
+		public BuildingController CurrentBuilding = null;
+
+		/// <summary>
+		/// The building where the actor is. 
+		/// </summary>
+		public MeshController MeshController = null;
 
 		public virtual void Awake()
 		{
 			Builder.Build();
+			MeshController = GetComponentInChildren<MeshController>();
 		}
 
 		public virtual void Start()
