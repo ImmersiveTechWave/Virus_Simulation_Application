@@ -6,19 +6,19 @@ namespace MF
 	public class SetHumanAIVariables : BaseAction<ActorController>
 	{
 		[RequiredField] public SharedGameObject ActorGameObject;
-		[RequiredField] public SharedGameObject HomePosition;
-		[RequiredField] public SharedGameObject HospitalPosition;
-		[RequiredField] public SharedGameObject MarketPosition;
+		[RequiredField] public SharedVector3 HomePosition;
+		[RequiredField] public SharedVector3 HospitalPosition;
+		[RequiredField] public SharedVector3 MarketPosition;
 		[RequiredField] public SharedVector3 JobPosition;
 
 		public override void OnStart()
 		{
 			base.OnStart();
 			ActorGameObject.Value = Actor.gameObject;
-			HospitalPosition.Value = Actor.Model.HospitalPosition;
-			MarketPosition.Value = Actor.Model.MarketPosition;
+			HospitalPosition.Value = Actor.Model.HospitalPosition.GetRandomPosition();
+			MarketPosition.Value = Actor.Model.MarketPosition.GetRandomPosition();
 			JobPosition.Value = Actor.Model.JobLocation.GetRandomPosition();
-			HomePosition.Value = Actor.Model.HomePosition;
+			HomePosition.Value = Actor.Model.HomePosition.GetRandomPosition();
 		}
 	}
 }

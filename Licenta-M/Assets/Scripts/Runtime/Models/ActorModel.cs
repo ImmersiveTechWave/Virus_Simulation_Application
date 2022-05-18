@@ -43,11 +43,11 @@ namespace MF
 
 		public TimeModel EndTimeModelToSleep;
 
-		public GameObject HomePosition;
+		public BuildingController HomePosition;
 
-		public GameObject HospitalPosition;
+		public BuildingController HospitalPosition;
 
-		public GameObject MarketPosition;
+		public BuildingController MarketPosition;
 
 		public BuildingController JobLocation;
 
