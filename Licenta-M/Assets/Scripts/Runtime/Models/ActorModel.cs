@@ -5,12 +5,12 @@ namespace MF
 {
 	public enum Activities
 	{
-		IsWorking,
-		IsEating,
-		IsSlepping,
-		IsHealing,
-		IsMoving,
-		IsStaying
+		Working,
+		Eating,
+		Slepping,
+		Healing,
+		Moving,
+		Staying
 	};
 
 	public class ActorModel
@@ -33,7 +33,7 @@ namespace MF
 
 		public List<GameObject> WanderPoints = new List<GameObject>();
 
-		public Activities CurrentActivity = Activities.IsStaying;
+		public Activities CurrentActivity = Activities.Staying;
 
 		public TimeModel StartTimeModelToWork;
 
@@ -43,13 +43,13 @@ namespace MF
 
 		public TimeModel EndTimeModelToSleep;
 
-		public GameObject HomePosition;
+		public BuildingController HomePosition;
 
-		public GameObject HospitalPosition;
+		public BuildingController HospitalPosition;
 
-		public GameObject MarketPosition;
+		public BuildingController MarketPosition;
 
-		public GameObject JobPosition;
+		public BuildingController JobLocation;
 
 		/// <summary>
 		/// The actor's current velocity
