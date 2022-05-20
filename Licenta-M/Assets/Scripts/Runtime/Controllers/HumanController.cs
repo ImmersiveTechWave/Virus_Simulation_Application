@@ -1,17 +1,38 @@
+using MF.UI;
 using UnityEngine;
 
 namespace MF
 {
 	[RequireComponent(typeof(HumanConfigurator))]
-	public class HumanController : CustomActorController<HumanModel, HumanView, Movement, NervousSystem>
+	public class HumanController : CustomActorController<HumanModel, HumanView, Movement, NervousSystem>, ISelectable
 	{
 		private const float DECREASE_TIME = 1f;
 
 		private float lastTime;
+		private UIMainScreenScreenController mainScreen;
+
 
 		public override void Start()
 		{
+			mainScreen = FindObjectOfType<UIMainScreenScreenController>();
 			lastTime = Time.time;
+
+			var random = new System.Random();
+			var name = "Default";
+			if (Model.Sex == Sex.M)
+			{
+				int index = random.Next(UtilsNames.MNames.Count);
+				name = UtilsNames.MNames[index];
+			}
+
+			if (Model.Sex == Sex.F)
+			{
+				int index = random.Next(UtilsNames.FNames.Count);
+				name = UtilsNames.FNames[index];
+			}
+
+			Model.Name = name;
+			Model.Age = random.Next(18, 50);
 		}
 
 		private void Update()
@@ -31,10 +52,10 @@ namespace MF
 		{
 			var decreseEnergyValue = 1f;
 
-			switch(Model.CurrentActivity)
+			switch (Model.CurrentActivity)
 			{
 				case Activities.Working:
-					decreseEnergyValue *= 3f;	// because human spends more time for doing work
+					decreseEnergyValue *= 3f;   // because human spends more time for doing work
 					break;
 				case Activities.Eating:
 					decreseEnergyValue *= 0.5f;      // because human eats
@@ -114,6 +135,16 @@ namespace MF
 
 			modelHealthValue = modelHealthValue - decreseHealthValue;
 			return modelHealthValue;
+		}
+
+		public void Select()
+		{
+			mainScreen.HumanWasSelected();
+		}
+
+		public void Deselect()
+		{
+			mainScreen.CloseHumanInfoPanel();
 		}
 	}
 }

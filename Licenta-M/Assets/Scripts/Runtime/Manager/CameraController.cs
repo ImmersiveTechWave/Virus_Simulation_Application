@@ -4,8 +4,8 @@ namespace MF
 {
 	public class CameraController : MonoBehaviour
 	{
-		private const float CAMERA_MOVEMENT = 10f;
-		private const float CAMERA_ROTATION = 1f;
+		private const float CAMERA_MOVEMENT = 20f;
+		private const float CAMERA_ROTATION = 100f;
 
 		private bool mouseIsDown;
 		private Vector3 startMousePosition = Vector3.zero;
@@ -55,7 +55,7 @@ namespace MF
 			if (Input.GetMouseButton(1) && mouseIsDown)
 			{
 				var difference = Input.mousePosition - startMousePosition;
-				var offset = new Vector2(difference.x / Screen.width, difference.y / Screen.height) * CAMERA_ROTATION;
+				var offset = new Vector2(difference.x / Screen.width, difference.y / Screen.height) * CAMERA_ROTATION * Time.deltaTime;
 				transform.Rotate(0.0f, offset.x, 0.0f, Space.World);
 				transform.Rotate(offset.y, 0.0f, 0.0f, Space.Self);
 			}

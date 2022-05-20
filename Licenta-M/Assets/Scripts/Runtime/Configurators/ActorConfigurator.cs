@@ -29,12 +29,14 @@ namespace MF
 		[Header("Core setup")]
 		public string UniqueIdentifier = Guid.NewGuid().ToString();
 
+		[Header("Sex")]
+		public Sex Sex = Sex.M;
+
 		[Header("Stats")]
 		[Range(0f, 100f)] public float Health = 100f;
 		[Range(0f, 100f)] public float Energy = 100f;
 		[Range(0f, 100f)] public float Hunger = 100f;
 		[Range(0f, 100f)] public float Money = 100f;
-
 
 		[Header("Movement")]
 		public float MovementSpeed = 2f;
@@ -79,6 +81,7 @@ namespace MF
 
 			model.StartTimeModelToSleep = new TimeModel(startHoursToSleep.Hour, startHoursToSleep.Minute, 0);
 			model.EndTimeModelToSleep = new TimeModel(endHoursToSleep.Hour, endHoursToSleep.Minute, 0);
+			model.Sex = Sex;
 		}
 
 		private string GetOrInitializeUniqueIdentifier()

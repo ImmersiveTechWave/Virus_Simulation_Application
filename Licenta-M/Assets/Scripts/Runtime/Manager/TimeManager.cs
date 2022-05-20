@@ -14,7 +14,7 @@ namespace MF
 		[Range(0.1f, 5000f)] public float TimeMultipilcator = 500f;
 
 		public TimeModel TimeModel { get; set; }
-		public TMP_Text TimeText;
+		public TMP_Text TimeText { get; set; }
 
 		private float startTime;
 		private SkyboxBlender skyboxBlender;
@@ -32,28 +32,31 @@ namespace MF
 
 		void Update()
 		{
-			var currentTime = (Time.time - startTime) * TimeMultipilcator;
-
-			TimeModel.Seconds = (int)(currentTime % SECONDS);
-			TimeModel.Minutes = (int)(currentTime / SECONDS % MINUTES);
-			TimeModel.Hours = (int)(((currentTime / (SECONDS * MINUTES)) + StartHour) % HOURS);
-
-			var skyBoxBlendValue = 0f;
-			if (TimeModel.Hours >= 0 && TimeModel.Hours <= HALF_HOURS)
+			if (!App.IsTimeStopped)
 			{
-				skyBoxBlendValue = 1 - (TimeModel.Hours * MINUTES + TimeModel.Minutes) / (HALF_HOURS * MINUTES);
-			}
-			if (TimeModel.Hours > HALF_HOURS && TimeModel.Hours <= HOURS)
-			{
-				skyBoxBlendValue = (TimeModel.Hours * MINUTES + TimeModel.Minutes - (HALF_HOURS * MINUTES)) / (HALF_HOURS * MINUTES);
-			}
+				var currentTime = (Time.time - startTime) * TimeMultipilcator;
 
-			skyboxBlender.blend = skyBoxBlendValue;
+				TimeModel.Seconds = (int)(currentTime % SECONDS);
+				TimeModel.Minutes = (int)(currentTime / SECONDS % MINUTES);
+				TimeModel.Hours = (int)(((currentTime / (SECONDS * MINUTES)) + StartHour) % HOURS);
 
-			var newTime = string.Format("{0:0}:{1:00}:{2:00}", TimeModel.Hours, TimeModel.Minutes, TimeModel.Seconds);
-			if (TimeText != null)
-			{
-				TimeText.text = newTime;
+				var skyBoxBlendValue = 0f;
+				if (TimeModel.Hours >= 0 && TimeModel.Hours <= HALF_HOURS)
+				{
+					skyBoxBlendValue = 1 - (TimeModel.Hours * MINUTES + TimeModel.Minutes) / (HALF_HOURS * MINUTES);
+				}
+				if (TimeModel.Hours > HALF_HOURS && TimeModel.Hours <= HOURS)
+				{
+					skyBoxBlendValue = (TimeModel.Hours * MINUTES + TimeModel.Minutes - (HALF_HOURS * MINUTES)) / (HALF_HOURS * MINUTES);
+				}
+
+				skyboxBlender.blend = skyBoxBlendValue;
+
+				var newTime = string.Format("{0:0}:{1:00}:{2:00}", TimeModel.Hours, TimeModel.Minutes, TimeModel.Seconds);
+				if (TimeText != null)
+				{
+					TimeText.text = newTime;
+				}
 			}
 		}
 	}
