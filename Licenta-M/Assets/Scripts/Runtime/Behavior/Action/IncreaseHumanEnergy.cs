@@ -1,6 +1,4 @@
 using BehaviorDesigner.Runtime.Tasks;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MF
@@ -43,16 +41,11 @@ namespace MF
 				lastTime = Time.time;
 			}
 
-			//if (Actor.Model.Energy.Value > 95f)
+			var currentTimeInMinutes = (App.TimeManager.TimeModel.Hours + endTimeOffset) * 60 + App.TimeManager.TimeModel.Minutes;
+			//if (startTimeInMinutes > currentTimeInMinutes || endTimeInMinutes < currentTimeInMinutes)
 			//{
 			//	return TaskStatus.Success;
 			//}
-
-			var currentTimeInMinutes = (App.TimeManager.TimeModel.Hours + endTimeOffset) * 60 + App.TimeManager.TimeModel.Minutes;
-			if (startTimeInMinutes > currentTimeInMinutes || endTimeInMinutes < currentTimeInMinutes)
-			{
-				return TaskStatus.Success;
-			}
 
 			return TaskStatus.Running;
 		}

@@ -4,12 +4,11 @@ using UnityEngine;
 
 namespace MF
 {
-	[TaskDescription("This task calculated the utility score for human money.")]
-	[TaskCategory("UtilityScore/Human")]
-	public class HumanMoneyUtilityScore : BaseAction<HumanController>
-	{
-		[RequiredField] public SharedUtilityScore Score;
-		[RequiredField] public SharedFloat MoneyScore;
+    [TaskCategory("UtilityScore/Human")]
+    public class HumanWanderUtilityScore : BaseAction<HumanController>
+    {
+        [RequiredField] public SharedUtilityScore Score;
+        [RequiredField] public SharedFloat WanderScore;
 
 		public override float GetUtility()
 		{
@@ -30,7 +29,7 @@ namespace MF
 			//	return Score.Value.Score;
 			//}
 
-			Score.Value = new UtilityScore(MoneyScore.Value, false);
+			Score.Value = new UtilityScore(WanderScore.Value, false);
 			return Score.Value.Score;
 		}
 	}

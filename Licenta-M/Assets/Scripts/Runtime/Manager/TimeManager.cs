@@ -18,6 +18,8 @@ namespace MF
 
 		private float startTime;
 		private SkyboxBlender skyboxBlender;
+		private bool lastStateValue;
+		private float whenTimeWasStopped = 0f;
 
 		private void Awake()
 		{
@@ -28,10 +30,24 @@ namespace MF
 		private void Start()
 		{
 			startTime = Time.time;
+			lastStateValue = App.IsTimeStopped;
 		}
 
 		void Update()
 		{
+			if (lastStateValue != App.IsTimeStopped)
+			{
+				if (App.IsTimeStopped)
+				{
+					whenTimeWasStopped = Time.time;
+				}
+				else
+				{
+					startTime = startTime + Time.time - whenTimeWasStopped;
+				}
+				lastStateValue = App.IsTimeStopped;
+			}
+
 			if (!App.IsTimeStopped)
 			{
 				var currentTime = (Time.time - startTime) * TimeMultipilcator;
