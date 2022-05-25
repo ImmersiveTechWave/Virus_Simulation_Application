@@ -25,7 +25,7 @@ namespace MF
 
 			if (startTimeInMinutes <= currentTimeInMinutes && endTimeInMinutes >= currentTimeInMinutes)
 			{
-				MoneyScore.Value = 0.99f;
+				MoneyScore.Value = 0.8f;
 			}
 			else
 			{

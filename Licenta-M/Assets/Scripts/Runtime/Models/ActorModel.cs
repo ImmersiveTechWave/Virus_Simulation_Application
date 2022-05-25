@@ -13,10 +13,18 @@ namespace MF
 		Staying
 	};
 
+	public enum Sex
+	{
+		F,
+		M
+	};
+
 	public class ActorModel
 	{
 		public string Guid;
-
+		public string Name { get; set; }
+		public Sex Sex { get; set; }
+		public int Age { get; set; } = 25;
 		public Observable<float> Health = new Observable<float>();
 
 		public Observable<float> Energy = new Observable<float>();
