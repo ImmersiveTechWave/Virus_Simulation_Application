@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 568953665344747664}
   - component: {fileID: 506275274893556982}
   - component: {fileID: 504763248377660170}
+  - component: {fileID: 7072494957695152888}
+  - component: {fileID: 4204494380663648476}
   m_Layer: 7
   m_Name: Building_81
   m_TagString: Untagged
@@ -114,6 +116,32 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43273199012410578, guid: 653b63cf4e5fdfd47962000c6f85b7c2, type: 2}
+--- !u!114 &7072494957695152888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568953665346780698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516303e4cad928741a12a474f9b1b354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActivityType: 0
+--- !u!65 &4204494380663648476
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568953665346780698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.774176, y: 25.250944, z: 16.830933}
+  m_Center: {x: -7.8732176, y: 12.625472, z: -7.3349447}
 --- !u!1 &2800005006698998536
 GameObject:
   m_ObjectHideFlags: 0
