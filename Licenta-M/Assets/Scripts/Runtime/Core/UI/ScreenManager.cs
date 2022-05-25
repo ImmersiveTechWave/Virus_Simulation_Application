@@ -65,6 +65,7 @@ namespace MF.UI
 
 			PreviousScreen?.gameObject.SetActive(false);
 			ActiveScreen.gameObject.SetActive(true);
+			ActiveScreen.OnEnter();
 		}
 
 		public void SetFirstScreen<T>()

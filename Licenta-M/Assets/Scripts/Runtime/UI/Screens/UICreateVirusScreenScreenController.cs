@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace MF.UI
 {
 	public class UICreateVirusScreenScreenController : MFScreen
@@ -35,6 +31,7 @@ namespace MF.UI
 				-1f : float.Parse(ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text);
 			var incubationTimeValue = ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text == "" ?
 				-1f : float.Parse(ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text);
+			var nameValue = ScreenView.UIInputHolderNameHolderNameInput.text;
 
 			if (spreadRateValue < 0 || spreadRateValue > 5)
 			{
@@ -76,8 +73,19 @@ namespace MF.UI
 				ScreenView.UIInputHolderIncubationTimeHolderWarning.gameObject.SetActive(false);
 			}
 
+			if (string.IsNullOrEmpty(nameValue))
+			{
+				ScreenView.UIInputHolderNameHolderWarning.gameObject.SetActive(true);
+				isReadyToStart = false;
+			}
+			else
+			{
+				ScreenView.UIInputHolderNameHolderWarning.gameObject.SetActive(false);
+			}
+
 			if (isReadyToStart)
 			{
+				App.CurrentVirus = new VirusModel(nameValue, spreadRateValue, deathRateValue, hospitalizationRateValue, incubationTimeValue);
 				ScreenManager.ShowScreen<UIMainScreenScreenController>();
 			}
 		}
@@ -88,6 +96,7 @@ namespace MF.UI
 			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "0.07";
 			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "2";
 			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "2";
+			ScreenView.UIInputHolderNameHolderNameInput.text = "Normal Flu";
 		}
 
 		private void SetCovidValues()
@@ -96,6 +105,7 @@ namespace MF.UI
 			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "3.4";
 			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "19";
 			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "7";
+			ScreenView.UIInputHolderNameHolderNameInput.text = "COVID-19";
 		}
 
 		private void SetSARSValues()
@@ -104,6 +114,7 @@ namespace MF.UI
 			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "10.2";
 			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "90";
 			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "5";
+			ScreenView.UIInputHolderNameHolderNameInput.text = "SARS";
 		}
 
 		private void SetMERSValues()
@@ -112,6 +123,7 @@ namespace MF.UI
 			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "34.4";
 			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "90";
 			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "6";
+			ScreenView.UIInputHolderNameHolderNameInput.text = "MERS";
 		}
 	}
 }

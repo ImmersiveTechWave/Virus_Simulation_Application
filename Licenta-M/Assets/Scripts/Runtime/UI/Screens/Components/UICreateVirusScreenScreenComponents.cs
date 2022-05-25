@@ -38,6 +38,13 @@ public class UICreateVirusScreenScreenComponents : MonoBehaviour
 	public RectTransform UIInputHolderIncubationTimeHolderIncubationTimeInputTextArea{ get; protected set; }
 	public TextMeshProUGUI UIInputHolderIncubationTimeHolderIncubationTimeInputTextAreaPlaceholder{ get; protected set; }
 	public TextMeshProUGUI UIInputHolderIncubationTimeHolderIncubationTimeInputTextAreaText{ get; protected set; }
+	public RectTransform UIInputHolderNameHolder{ get; protected set; }
+	public TextMeshProUGUI UIInputHolderNameHolderWarning{ get; protected set; }
+	public TextMeshProUGUI UIInputHolderNameHolderText{ get; protected set; }
+	public TMP_InputField UIInputHolderNameHolderNameInput{ get; protected set; }
+	public RectTransform UIInputHolderNameHolderNameInputTextArea{ get; protected set; }
+	public TextMeshProUGUI UIInputHolderNameHolderNameInputTextAreaPlaceholder{ get; protected set; }
+	public TextMeshProUGUI UIInputHolderNameHolderNameInputTextAreaText{ get; protected set; }
 	public Button UIInputHolderStartButton{ get; protected set; }
 	public TextMeshProUGUI UIInputHolderStartButtonText{ get; protected set; }
 	public RectTransform UIPreSetHolder{ get; protected set; }
@@ -82,6 +89,13 @@ public class UICreateVirusScreenScreenComponents : MonoBehaviour
 		UIInputHolderIncubationTimeHolderIncubationTimeInputTextArea = transform.Find("InputHolder/IncubationTimeHolder/IncubationTimeInput/Text Area").GetComponent<RectTransform>();
 		UIInputHolderIncubationTimeHolderIncubationTimeInputTextAreaPlaceholder = transform.Find("InputHolder/IncubationTimeHolder/IncubationTimeInput/Text Area/Placeholder").GetComponent<TextMeshProUGUI>();
 		UIInputHolderIncubationTimeHolderIncubationTimeInputTextAreaText = transform.Find("InputHolder/IncubationTimeHolder/IncubationTimeInput/Text Area/Text").GetComponent<TextMeshProUGUI>();
+		UIInputHolderNameHolder = transform.Find("InputHolder/NameHolder").GetComponent<RectTransform>();
+		UIInputHolderNameHolderWarning = transform.Find("InputHolder/NameHolder/Warning").GetComponent<TextMeshProUGUI>();
+		UIInputHolderNameHolderText = transform.Find("InputHolder/NameHolder/Text").GetComponent<TextMeshProUGUI>();
+		UIInputHolderNameHolderNameInput = transform.Find("InputHolder/NameHolder/NameInput").GetComponent<TMP_InputField>();
+		UIInputHolderNameHolderNameInputTextArea = transform.Find("InputHolder/NameHolder/NameInput/Text Area").GetComponent<RectTransform>();
+		UIInputHolderNameHolderNameInputTextAreaPlaceholder = transform.Find("InputHolder/NameHolder/NameInput/Text Area/Placeholder").GetComponent<TextMeshProUGUI>();
+		UIInputHolderNameHolderNameInputTextAreaText = transform.Find("InputHolder/NameHolder/NameInput/Text Area/Text").GetComponent<TextMeshProUGUI>();
 		UIInputHolderStartButton = transform.Find("InputHolder/StartButton").GetComponent<Button>();
 		UIInputHolderStartButtonText = transform.Find("InputHolder/StartButton/Text").GetComponent<TextMeshProUGUI>();
 		UIPreSetHolder = transform.Find("PreSetHolder").GetComponent<RectTransform>();

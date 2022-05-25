@@ -24,6 +24,19 @@ public class UIMainScreenScreenComponents : MonoBehaviour
 	public TextMeshProUGUI UIInfoPanelHolderInfoPanelVirusStatus{ get; protected set; }
 	public Image UIInfoPanelHolderInfoPanelUp{ get; protected set; }
 	public Button UIInfoPanelHolderInfoPanelUpClosePanel{ get; protected set; }
+	public RectTransform UIVirusInfoHolder{ get; protected set; }
+	public Image UIVirusInfoHolderVirusInfoBackground{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundVirusName{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundSpreadRate{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundDeathRate{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundHospitalizationRate{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundIncubationTime{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundCurrentCases{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundTotalCases{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundTotalDeaths{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundRecoverd{ get; protected set; }
+	public Toggle UIVirusInfoHolderVirusInfoBackgroundMaskToggle{ get; protected set; }
+	public Toggle UIVirusInfoHolderVirusInfoBackgroundVaccineToggle{ get; protected set; }
 
 	private void Awake()
 	{
@@ -43,6 +56,19 @@ public class UIMainScreenScreenComponents : MonoBehaviour
 		UIInfoPanelHolderInfoPanelVirusStatus = transform.Find("InfoPanelHolder/InfoPanel/VirusStatus").GetComponent<TextMeshProUGUI>();
 		UIInfoPanelHolderInfoPanelUp = transform.Find("InfoPanelHolder/InfoPanelUp").GetComponent<Image>();
 		UIInfoPanelHolderInfoPanelUpClosePanel = transform.Find("InfoPanelHolder/InfoPanelUp/ClosePanel").GetComponent<Button>();
+		UIVirusInfoHolder = transform.Find("VirusInfoHolder").GetComponent<RectTransform>();
+		UIVirusInfoHolderVirusInfoBackground = transform.Find("VirusInfoHolder/VirusInfoBackground").GetComponent<Image>();
+		UIVirusInfoHolderVirusInfoBackgroundVirusName = transform.Find("VirusInfoHolder/VirusInfoBackground/VirusName").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundSpreadRate = transform.Find("VirusInfoHolder/VirusInfoBackground/SpreadRate").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundDeathRate = transform.Find("VirusInfoHolder/VirusInfoBackground/DeathRate").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundHospitalizationRate = transform.Find("VirusInfoHolder/VirusInfoBackground/HospitalizationRate").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundIncubationTime = transform.Find("VirusInfoHolder/VirusInfoBackground/IncubationTime").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundCurrentCases = transform.Find("VirusInfoHolder/VirusInfoBackground/CurrentCases").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundTotalCases = transform.Find("VirusInfoHolder/VirusInfoBackground/Total Cases").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundTotalDeaths = transform.Find("VirusInfoHolder/VirusInfoBackground/TotalDeaths").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundRecoverd = transform.Find("VirusInfoHolder/VirusInfoBackground/Recoverd").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundMaskToggle = transform.Find("VirusInfoHolder/VirusInfoBackground/MaskToggle").GetComponent<Toggle>();
+		UIVirusInfoHolderVirusInfoBackgroundVaccineToggle = transform.Find("VirusInfoHolder/VirusInfoBackground/VaccineToggle").GetComponent<Toggle>();
 	}
 }
 }

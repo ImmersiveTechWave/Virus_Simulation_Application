@@ -10,11 +10,12 @@ namespace MF
 
 		private float lastTime;
 		private UIMainScreenScreenController mainScreen;
-
+		private bool lastStateValue;
+		private float whenTimeWasStopped = 0f;
 
 		public override void Start()
 		{
-			mainScreen = FindObjectOfType<UIMainScreenScreenController>();
+			mainScreen = FindObjectOfType<UIMainScreenScreenController>(true);
 			lastTime = Time.time;
 
 			var random = new System.Random();
@@ -33,11 +34,25 @@ namespace MF
 
 			Model.Name = name;
 			Model.Age = random.Next(18, 50);
+			lastStateValue = App.IsTimeStopped;
 		}
 
 		private void Update()
 		{
-			if (Time.time - lastTime > DECREASE_TIME)
+			if (lastStateValue != App.IsTimeStopped)
+			{
+				if (App.IsTimeStopped)
+				{
+					whenTimeWasStopped = Time.time;
+				}
+				else
+				{
+					lastTime = lastTime + Time.time - whenTimeWasStopped;
+				}
+				lastStateValue = App.IsTimeStopped;
+			}
+
+			if (!App.IsTimeStopped && Time.time - lastTime > DECREASE_TIME)
 			{
 				lastTime = Time.time;
 
