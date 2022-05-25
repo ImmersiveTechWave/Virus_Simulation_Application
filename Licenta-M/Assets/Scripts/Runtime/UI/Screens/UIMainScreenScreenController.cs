@@ -15,6 +15,7 @@ namespace MF.UI
 
 		private void Start()
 		{
+			ScreenManager.ShowScreen<UIMainScreenScreenController>();
 			timeManager.TimeText = ScreenView.UICurrentTime;
 
 			ScreenView.UITimeManagerPlayTime.onClick.AddListener(StartTime);

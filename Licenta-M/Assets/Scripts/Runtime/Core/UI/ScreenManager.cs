@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MF.UI
 {
-    public class ScreenManager : MonoBehaviour
+	public class ScreenManager : MonoBehaviour
 	{
 		public Dictionary<Type, MFScreen> Screens = new Dictionary<Type, MFScreen>();
 		public MFScreen ActiveScreen { get; set; } = null;
@@ -24,6 +24,7 @@ namespace MF.UI
 				Screens[keys].gameObject.GetComponent<RectTransform>().offsetMax = Vector3.zero;
 				Screens[keys].gameObject.SetActive(false);
 			}
+			SetFirstScreen<UICreateVirusScreenScreenController>();
 		}
 
 		private void Start()
