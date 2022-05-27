@@ -33,6 +33,14 @@ namespace MF
 			lastStateValue = App.IsTimeStopped;
 		}
 
+		public void SetTime()
+		{
+			TimeModel = new TimeModel(StartHour, 0, 0);
+			startTime = Time.time;
+			lastStateValue = App.IsTimeStopped;
+			whenTimeWasStopped = Time.time;
+		}
+
 		void Update()
 		{
 			if (lastStateValue != App.IsTimeStopped)

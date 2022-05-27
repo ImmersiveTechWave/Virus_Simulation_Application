@@ -1,3 +1,5 @@
+using UnityEngine.SceneManagement;
+
 namespace MF.UI
 {
 	public class UIMainScreenScreenController : MFScreen
@@ -24,7 +26,7 @@ namespace MF.UI
 			ScreenView.UIInfoPanelHolderInfoPanelUpClosePanel.onClick.AddListener(CloseHumanInfoPanel);
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundMaskToggle.onValueChanged.AddListener(OnMaskStateChanged);
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundVaccineToggle.onValueChanged.AddListener(OnVaccinStateChanged);
-
+			ScreenView.UIMenuButton.onClick.AddListener(GoToMenu);
 			SetUIElementStartState();
 		}
 
@@ -44,6 +46,13 @@ namespace MF.UI
 				App.CurrentVirus.SpreadRate /= 0.53f;
 			}
 			SetUpVirusInfoPanel();
+		}
+
+		private void GoToMenu()
+		{
+			App.IsTimeStopped = true;
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+			ScreenManager.ShowScreen<UICreateVirusScreenScreenController>();
 		}
 
 		private void OnVaccinStateChanged(bool state)
@@ -83,6 +92,7 @@ namespace MF.UI
 		{
 			ScreenView.UITimeManagerPlayTime.gameObject.SetActive(true);
 			ScreenView.UITimeManagerStopTime.gameObject.SetActive(false);
+			ScreenView.UIInfoPanelHolder.gameObject.SetActive(false);
 		}
 
 		private void StopTime()
@@ -117,6 +127,7 @@ namespace MF.UI
 		public override void OnEnter()
 		{
 			base.OnEnter();
+			SetUIElementStartState();
 			SetUpVirusInfoPanel();
 		}
 
@@ -124,7 +135,7 @@ namespace MF.UI
 		{
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundVirusName.text = App.CurrentVirus?.Name;
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundSpreadRate.text = "Spread Rate: " + App.CurrentVirus?.SpreadRate.ToString();
-			ScreenView.UIVirusInfoHolderVirusInfoBackgroundDeathRate.text = "Death Rate: " + App.CurrentVirus?.DeathRate.ToString() + "%";
+			ScreenView.UIVirusInfoHolderVirusInfoBackgroundDeathRate.text = " Death Rate: " + App.CurrentVirus?.DeathRate.ToString() + "%";
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundHospitalizationRate.text = "Hospitalization Rate: " + App.CurrentVirus?.HospitalizationRate.ToString() + "%";
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundIncubationTime.text = "Incubation Time:\n" + App.CurrentVirus?.IncubationTime.ToString() + " Days";
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundCurrentCases.text = "Current Cases: " + App.CurrentVirus?.CurrentCases.ToString();

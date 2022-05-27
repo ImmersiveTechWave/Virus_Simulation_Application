@@ -15,5 +15,10 @@ namespace MF.UI
 		{
 
 		}
+
+		virtual public void OnExit()
+		{
+
+		}
 	}
 }
