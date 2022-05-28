@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace MF.UI
@@ -20,6 +21,12 @@ namespace MF.UI
 			ScreenView.UIPreSetHolderSARSButton.onClick.AddListener(SetSARSValues);
 			ScreenView.UIPreSetHolderMERS.onClick.AddListener(SetMERSValues);
 			ScreenView.UIInputHolderStartButton.onClick.AddListener(StartSimulation);
+			ScreenView.UIExitButton.onClick.AddListener(CloseApplication);
+		}
+
+		private void CloseApplication()
+		{
+			Application.Quit();
 		}
 
 		private void StartSimulation()

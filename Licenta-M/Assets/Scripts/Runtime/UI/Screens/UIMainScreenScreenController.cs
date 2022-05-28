@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace MF.UI
@@ -27,12 +28,18 @@ namespace MF.UI
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundMaskToggle.onValueChanged.AddListener(OnMaskStateChanged);
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundVaccineToggle.onValueChanged.AddListener(OnVaccinStateChanged);
 			ScreenView.UIMenuButton.onClick.AddListener(GoToMenu);
+			ScreenView.UIExitButton.onClick.AddListener(CloseApplication);
 			SetUIElementStartState();
 		}
 
 		private void Update()
 		{
 			UpdateSelectedHumanInfoPanel();
+		}
+
+		private void CloseApplication()
+		{
+			Application.Quit();
 		}
 
 		private void OnMaskStateChanged(bool state)
