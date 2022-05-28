@@ -55,9 +55,9 @@ namespace MF
 
 		public BuildingController HospitalPosition;
 
-		public BuildingController MarketPosition;
+		public BuildingController ShopPosition;
 
-		public BuildingController JobLocation;
+		public BuildingController JobPosition;
 
 		/// <summary>
 		/// The actor's current velocity

@@ -56,6 +56,7 @@ public class UICreateVirusScreenScreenComponents : MonoBehaviour
 	public TextMeshProUGUI UIPreSetHolderSARSButtonText{ get; protected set; }
 	public Button UIPreSetHolderMERS{ get; protected set; }
 	public TextMeshProUGUI UIPreSetHolderMERSText{ get; protected set; }
+	public Button UIExitButton{ get; protected set; }
 
 	private void Awake()
 	{
@@ -107,6 +108,7 @@ public class UICreateVirusScreenScreenComponents : MonoBehaviour
 		UIPreSetHolderSARSButtonText = transform.Find("PreSetHolder/SARSButton/Text").GetComponent<TextMeshProUGUI>();
 		UIPreSetHolderMERS = transform.Find("PreSetHolder/MERS").GetComponent<Button>();
 		UIPreSetHolderMERSText = transform.Find("PreSetHolder/MERS/Text").GetComponent<TextMeshProUGUI>();
+		UIExitButton = transform.Find("ExitButton").GetComponent<Button>();
 	}
 }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace MF
@@ -42,21 +43,22 @@ namespace MF
 		public float MovementSpeed = 2f;
 		public float WalkSpeed = 2f;
 		public float RunSpeed = 4f;
-		public List<GameObject> WanderPoints = new List<GameObject>();
+		public GameObject WanderPointsHolder;
 
-		[Header("Position To Go")]
-		public BuildingController HomePosition;
-		public BuildingController HospitalPosition;
-		public BuildingController MarketPosition;
-		public BuildingController JobLocation;
+		//[Header("Position To Go")]
+		//public BuildingController HomePosition;
+		//public BuildingController HospitalPosition;
+		//public BuildingController MarketPosition;
+		//public BuildingController JobLocation;
 
-		[Header("Work Hours")]
-		public TimaData startHoursToWork;
-		public TimaData endHoursToWork;
+		//[Header("Work Hours")]
+		//public TimaData startHoursToWork;
+		//public TimaData endHoursToWork;
 
-		[Header("Sleep Hours")]
-		public TimaData startHoursToSleep;
-		public TimaData endHoursToSleep;
+		//[Header("Sleep Hours")]
+		//public TimaData startHoursToSleep;
+		//public TimaData endHoursToSleep;
+
 
 		public virtual void Configure(ActorModel model)
 		{
@@ -69,18 +71,37 @@ namespace MF
 			model.MovementSpeed.Value = MovementSpeed;
 			model.WalkSpeed.Value = WalkSpeed;
 			model.RunSpeed.Value = RunSpeed;
-			model.WanderPoints = WanderPoints;
+			var wanderPointsList = new List<GameObject>();
+			if (WanderPointsHolder != null)
+			{
+				var points = WanderPointsHolder.GetComponentsInChildren<Transform>().ToList();
+				foreach (var point in points)
+				{
+					wanderPointsList.Add(point.gameObject);
+				}
+			}
+			model.WanderPoints = wanderPointsList;
 
-			model.HomePosition = HomePosition;
-			model.HospitalPosition = HospitalPosition;
-			model.MarketPosition = MarketPosition;
-			model.JobLocation = JobLocation;
+			//model.HomePosition = HomePosition;
+			//model.HospitalPosition = HospitalPosition;
+			//model.ShopPosition = MarketPosition;
+			//model.JobPosition = JobLocation;
 
-			model.StartTimeModelToWork = new TimeModel(startHoursToWork.Hour, startHoursToWork.Minute, 0);
-			model.EndTimeModelToWork = new TimeModel(endHoursToWork.Hour, endHoursToWork.Minute, 0);
+			var random = new System.Random();
+			var startHourToWork = random.Next(2) + 8;
+			var startMinuteToWork = random.Next(60);
+			var endHourToWork = random.Next(4) + 14;
+			var endMinuteToWork = random.Next(60);
 
-			model.StartTimeModelToSleep = new TimeModel(startHoursToSleep.Hour, startHoursToSleep.Minute, 0);
-			model.EndTimeModelToSleep = new TimeModel(endHoursToSleep.Hour, endHoursToSleep.Minute, 0);
+			var startHourToSleep = random.Next(2) + 21;
+			var startMinuteToSleep = random.Next(60);
+			var endHourToSleep = random.Next(2) + 6;
+			var endMinuteToSleep = random.Next(60);
+			model.StartTimeModelToWork = new TimeModel(startHourToWork, startMinuteToWork, 0);
+			model.EndTimeModelToWork = new TimeModel(endHourToWork, endMinuteToWork, 0);
+
+			model.StartTimeModelToSleep = new TimeModel(startHourToSleep, startMinuteToSleep, 0);
+			model.EndTimeModelToSleep = new TimeModel(endHourToSleep, endMinuteToSleep, 0);
 			model.Sex = Sex;
 		}
 

@@ -14,5 +14,10 @@ namespace MF
 			Minutes = minute;
 			Seconds = second;
 		}
+
+		public override string ToString()
+		{
+			return Hours + ":" + Minutes + ":" + Seconds;
+		}
 	}
 }

@@ -16,8 +16,8 @@ namespace MF
 			base.OnStart();
 			ActorGameObject.Value = Actor.gameObject;
 			HospitalPosition.Value = Actor.Model.HospitalPosition.GetRandomPosition();
-			MarketPosition.Value = Actor.Model.MarketPosition.GetRandomPosition();
-			JobPosition.Value = Actor.Model.JobLocation.GetRandomPosition();
+			MarketPosition.Value = Actor.Model.ShopPosition.GetRandomPosition();
+			JobPosition.Value = Actor.Model.JobPosition.GetRandomPosition();
 			HomePosition.Value = Actor.Model.HomePosition.GetRandomPosition();
 		}
 	}

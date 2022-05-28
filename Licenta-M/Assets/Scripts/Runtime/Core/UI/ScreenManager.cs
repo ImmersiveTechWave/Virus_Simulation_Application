@@ -64,6 +64,7 @@ namespace MF.UI
 			ActiveScreen = Screens[type];
 
 			PreviousScreen?.gameObject.SetActive(false);
+			PreviousScreen?.OnExit();
 			ActiveScreen.gameObject.SetActive(true);
 			ActiveScreen.OnEnter();
 		}

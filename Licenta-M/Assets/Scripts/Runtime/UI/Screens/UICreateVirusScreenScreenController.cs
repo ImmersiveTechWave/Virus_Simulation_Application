@@ -1,3 +1,6 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 namespace MF.UI
 {
 	public class UICreateVirusScreenScreenController : MFScreen
@@ -18,6 +21,12 @@ namespace MF.UI
 			ScreenView.UIPreSetHolderSARSButton.onClick.AddListener(SetSARSValues);
 			ScreenView.UIPreSetHolderMERS.onClick.AddListener(SetMERSValues);
 			ScreenView.UIInputHolderStartButton.onClick.AddListener(StartSimulation);
+			ScreenView.UIExitButton.onClick.AddListener(CloseApplication);
+		}
+
+		private void CloseApplication()
+		{
+			Application.Quit();
 		}
 
 		private void StartSimulation()
@@ -87,7 +96,18 @@ namespace MF.UI
 			{
 				App.CurrentVirus = new VirusModel(nameValue, spreadRateValue, deathRateValue, hospitalizationRateValue, incubationTimeValue);
 				ScreenManager.ShowScreen<UIMainScreenScreenController>();
+				App.TimeManager.SetTime();
 			}
+		}
+
+		public override void OnExit()
+		{
+			base.OnExit();
+			ScreenView.UIInputHolderSpreadRateHolderSpreadRateInput.text = "";
+			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "";
+			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "";
+			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "";
+			ScreenView.UIInputHolderNameHolderNameInput.text = "";
 		}
 
 		private void SetNormalFluValues()
