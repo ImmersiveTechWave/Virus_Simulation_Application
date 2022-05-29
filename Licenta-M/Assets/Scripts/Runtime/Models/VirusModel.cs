@@ -26,6 +26,9 @@ namespace MF
 		public float TotalCases { get; set; } = 0;
 		public float Recovered { get; set; } = 0;
 		public float Deaths { get; set; } = 0;
+		public float MildCases { get; set; } = 0;
+		public float SevereCases { get; set; } = 0;
+
 
 		public VirusModel()
 		{

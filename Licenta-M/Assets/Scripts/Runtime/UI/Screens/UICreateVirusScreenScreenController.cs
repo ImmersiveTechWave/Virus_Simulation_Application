@@ -96,6 +96,9 @@ namespace MF.UI
 			{
 				App.CurrentVirus = new VirusModel(nameValue, spreadRateValue, deathRateValue, hospitalizationRateValue, incubationTimeValue);
 				ScreenManager.ShowScreen<UIMainScreenScreenController>();
+				App.CurrentVirus.TotalCases = HumanManager.NUMBER_INFECTED_PEOPLE;
+				App.CurrentVirus.CurrentCases = HumanManager.NUMBER_INFECTED_PEOPLE;
+				App.CurrentVirus.MildCases = HumanManager.NUMBER_INFECTED_PEOPLE;
 				App.TimeManager.SetTime();
 			}
 		}

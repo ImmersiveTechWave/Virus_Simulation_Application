@@ -13,6 +13,7 @@ namespace MF
 		private bool lastStateValue;
 		private float whenTimeWasStopped = 0f;
 		private TimeManager timeManager;
+		private System.Random randomGenerator = new System.Random();
 
 		public override void Start()
 		{
@@ -63,6 +64,13 @@ namespace MF
 				Model.Energy.Value = Model.Energy.Value < 1 ? 0 : DecreseEnergy(Model.Energy.Value);
 				Model.Hunger.Value = Model.Hunger.Value < 1 ? 0 : DecreseHunger(Model.Hunger.Value);
 			}
+
+			UpdateVirusSprite();
+		}
+
+		private void UpdateVirusSprite()
+		{
+			MyView.VirusSprite.transform.rotation = Camera.main.transform.rotation;
 		}
 
 		public float DecreseEnergy(float modelEnergyValue)
@@ -148,16 +156,15 @@ namespace MF
 
 		public float DecreseHealth(float modelHealthValue)
 		{
+			var decreseHealthValue = 0f;
 			if (MyModel.IsInfected)
 			{
-				var random = new System.Random();
-				var hospitalizationRate = random.Next(1000);
+				var hospitalizationRate = randomGenerator.Next(1000);
 				if (App.CurrentVirus.HospitalizationRate * 10 > hospitalizationRate)
 				{
-					Debug.Log("Virus hos: " + hospitalizationRate);
+					decreseHealthValue = MyModel.IsSevere ? 2.34f : 0.56f;
+					decreseHealthValue = MyModel.IsInQuarantine ? 0f : decreseHealthValue;
 				}
-
-				var decreseHealthValue = 0f;
 
 				modelHealthValue = modelHealthValue - decreseHealthValue;
 			}
@@ -181,10 +188,26 @@ namespace MF
 			{
 				if (MyModel.IsInfected && !human.MyModel.IsInfected)
 				{
-					human.MyModel.IsInfected = true;
-					human.MyModel.InfectedDay = timeManager.TimeModel.Day;
-					App.CurrentVirus.TotalCases += 1f;
-					App.CurrentVirus.CurrentCases += 1f;
+					var infectedChance = randomGenerator.Next(500);
+					if (infectedChance < App.CurrentVirus.SpreadRate)
+					{
+						human.MyModel.IsInfected = true;
+						human.MyModel.InfectedDay = timeManager.TimeModel.Day;
+						App.CurrentVirus.TotalCases += 1f;
+						App.CurrentVirus.CurrentCases += 1f;
+						MyView.VirusSprite.gameObject.SetActive(true);
+						var severeChance = randomGenerator.Next(100);
+						if (severeChance < 10)
+						{
+							MyModel.IsSevere = true;
+							App.CurrentVirus.SevereCases += 1;
+						}
+						else
+						{
+							MyModel.IsSevere = false;
+							App.CurrentVirus.MildCases += 1;
+						}
+					}
 				}
 			}
 		}

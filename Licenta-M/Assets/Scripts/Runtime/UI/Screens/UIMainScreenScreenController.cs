@@ -8,12 +8,14 @@ namespace MF.UI
 		public UIMainScreenScreenComponents ScreenView { get; private set; }
 
 		private TimeManager timeManager;
+		private HumanManager humanManager;
 
 		public override void Awake()
 		{
 			base.Awake();
 			ScreenView = GetComponent<UIMainScreenScreenComponents>();
 			timeManager = FindObjectOfType<TimeManager>();
+			humanManager = FindObjectOfType<HumanManager>();
 		}
 
 		private void Start()
@@ -26,6 +28,7 @@ namespace MF.UI
 			ScreenView.UIInfoPanelHolderInfoPanelUpClosePanel.onClick.AddListener(CloseHumanInfoPanel);
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundMaskToggle.onValueChanged.AddListener(OnMaskStateChanged);
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundVaccineToggle.onValueChanged.AddListener(OnVaccinStateChanged);
+			ScreenView.UIVirusInfoHolderVirusInfoBackgroundQuarantineToggle.onValueChanged.AddListener(OnQuarantineStateChanged);
 			ScreenView.UIMenuButton.onClick.AddListener(GoToMenu);
 			ScreenView.UIExitButton.onClick.AddListener(CloseApplication);
 			SetUIElementStartState();
@@ -35,6 +38,11 @@ namespace MF.UI
 		{
 			UpdateSelectedHumanInfoPanel();
 			UpdateTime();
+		}
+
+		private void OnQuarantineStateChanged(bool state)
+		{
+			humanManager.SetHumansQuarantine(state);
 		}
 
 		private void UpdateTime()
@@ -53,11 +61,11 @@ namespace MF.UI
 		{
 			if (state)
 			{
-				App.CurrentVirus.SpreadRate *= 0.53f;
+				App.CurrentVirus.SpreadRate *= 0.33f;
 			}
 			else
 			{
-				App.CurrentVirus.SpreadRate /= 0.53f;
+				App.CurrentVirus.SpreadRate /= 0.33f;
 			}
 			SetUpVirusInfoPanel();
 		}
@@ -101,6 +109,8 @@ namespace MF.UI
 				ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.text = App.SelectedHumanController.MyModel.IsInfected ? "Virus State: Infected" : "Virus State: Uninfected";
 				ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.color = App.SelectedHumanController.MyModel.IsInfected ? Color.red : Color.green;
 				ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalDeaths.text = "Deaths: " + App.CurrentVirus?.Deaths.ToString();
+				ScreenView.UIVirusInfoHolderVirusInfoBackgroundSevereCases.text = "Severe Cases: " + App.CurrentVirus?.SevereCases.ToString();
+				ScreenView.UIVirusInfoHolderVirusInfoBackgroundMildCases.text = "Mild Cases: " + App.CurrentVirus?.MildCases.ToString();
 			}
 		}
 
@@ -163,6 +173,8 @@ namespace MF.UI
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalCases.text = "Total Cases: " + App.CurrentVirus?.TotalCases.ToString();
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundRecoverd.text = "Recoverd: " + App.CurrentVirus?.Recovered.ToString();
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalDeaths.text = "Deaths: " + App.CurrentVirus?.Deaths.ToString();
+			ScreenView.UIVirusInfoHolderVirusInfoBackgroundSevereCases.text = "Severe Cases: " + App.CurrentVirus?.SevereCases.ToString();
+			ScreenView.UIVirusInfoHolderVirusInfoBackgroundMildCases.text = "Mild Cases: " + App.CurrentVirus?.MildCases.ToString();
 		}
 	}
 }

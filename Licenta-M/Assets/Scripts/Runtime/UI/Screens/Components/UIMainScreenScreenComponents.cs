@@ -40,6 +40,7 @@ public class UIMainScreenScreenComponents : MonoBehaviour
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundRecoverd{ get; protected set; }
 	public Toggle UIVirusInfoHolderVirusInfoBackgroundMaskToggle{ get; protected set; }
 	public Toggle UIVirusInfoHolderVirusInfoBackgroundVaccineToggle{ get; protected set; }
+	public Toggle UIVirusInfoHolderVirusInfoBackgroundQuarantineToggle{ get; protected set; }
 	public Button UIMenuButton{ get; protected set; }
 	public Image UIMenuButtonImage{ get; protected set; }
 	public Button UIExitButton{ get; protected set; }
@@ -79,6 +80,7 @@ public class UIMainScreenScreenComponents : MonoBehaviour
 		UIVirusInfoHolderVirusInfoBackgroundRecoverd = transform.Find("VirusInfoHolder/VirusInfoBackground/Recoverd").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundMaskToggle = transform.Find("VirusInfoHolder/VirusInfoBackground/MaskToggle").GetComponent<Toggle>();
 		UIVirusInfoHolderVirusInfoBackgroundVaccineToggle = transform.Find("VirusInfoHolder/VirusInfoBackground/VaccineToggle").GetComponent<Toggle>();
+		UIVirusInfoHolderVirusInfoBackgroundQuarantineToggle = transform.Find("VirusInfoHolder/VirusInfoBackground/QuarantineToggle").GetComponent<Toggle>();
 		UIMenuButton = transform.Find("MenuButton").GetComponent<Button>();
 		UIMenuButtonImage = transform.Find("MenuButton/Image").GetComponent<Image>();
 		UIExitButton = transform.Find("ExitButton").GetComponent<Button>();

@@ -24,6 +24,7 @@ namespace MF
 			if (Actor.CurrentBuilding != null && Actor.Model.CurrentActivity == Actor.CurrentBuilding.ActivityType)
 			{
 				Actor.MeshController.SkinnedMeshRenderer.enabled = false;
+				Actor.MyView.VirusSprite.gameObject.SetActive(false);
 			}
 		}
 
@@ -49,6 +50,7 @@ namespace MF
 		{
 			base.OnEnd();
 			Actor.MeshController.SkinnedMeshRenderer.enabled = true;
+			Actor.MyView.VirusSprite.gameObject.SetActive(Actor.MyModel.IsInfected);
 		}
 	}
 }
