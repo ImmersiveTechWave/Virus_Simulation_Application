@@ -9,6 +9,7 @@ namespace MF.UI
 public class UIMainScreenScreenComponents : MonoBehaviour
 {
 	public TextMeshProUGUI UICurrentTime{ get; protected set; }
+	public TextMeshProUGUI UICurrentDay{ get; protected set; }
 	public RectTransform UITimeManager{ get; protected set; }
 	public Button UITimeManagerStopTime{ get; protected set; }
 	public Button UITimeManagerPlayTime{ get; protected set; }
@@ -45,6 +46,7 @@ public class UIMainScreenScreenComponents : MonoBehaviour
 	private void Awake()
 	{
 		UICurrentTime = transform.Find("CurrentTime").GetComponent<TextMeshProUGUI>();
+		UICurrentDay = transform.Find("CurrentDay").GetComponent<TextMeshProUGUI>();
 		UITimeManager = transform.Find("TimeManager").GetComponent<RectTransform>();
 		UITimeManagerStopTime = transform.Find("TimeManager/StopTime").GetComponent<Button>();
 		UITimeManagerPlayTime = transform.Find("TimeManager/PlayTime").GetComponent<Button>();

@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 8703179333463411694}
   - component: {fileID: 6074093729046217200}
   - component: {fileID: -589485653815230477}
+  - component: {fileID: 6413167757059466161}
   - component: {fileID: 6378680283409323117}
   - component: {fileID: 5466664647909066982}
   - component: {fileID: 7548277534404508389}
@@ -424,7 +425,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
@@ -442,6 +443,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!135 &6413167757059466161
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069568114651655364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &6378680283409323117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,9 +474,9 @@ MonoBehaviour:
   Energy: 100
   Hunger: 100
   Money: 100
-  MovementSpeed: 2
-  WalkSpeed: 2
-  RunSpeed: 4
+  MovementSpeed: 5
+  WalkSpeed: 5
+  RunSpeed: 5
   WanderPointsHolder: {fileID: 0}
   HungerDecreaseRate: 0.5
   MoneyDecreaseRate: 0.1
@@ -1555,6 +1569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8074557020538904802}
   - component: {fileID: 1730209203983851054}
+  - component: {fileID: 5568735734866996114}
   m_Layer: 8
   m_Name: Character_SummerGirl
   m_TagString: Untagged
@@ -1679,6 +1694,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00062179565, y: 0.8635058, z: 0.0070085824}
     m_Extent: {x: 1.0219108, y: 0.968165, z: 0.26474977}
   m_DirtyAABB: 0
+--- !u!114 &5568735734866996114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8121387970869790940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4c9d8a3e638a54883823a6a1d650b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8473072140065246180
 GameObject:
   m_ObjectHideFlags: 0

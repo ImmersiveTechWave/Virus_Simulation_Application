@@ -1226,6 +1226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6863057753459649913}
   - component: {fileID: 6892022675200032792}
+  - component: {fileID: 2428012020482106136}
   m_Layer: 8
   m_Name: Character_GamerGirl
   m_TagString: Untagged
@@ -1350,6 +1351,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00056630373, y: 0.881389, z: -0.02716045}
     m_Extent: {x: 1.0219111, y: 0.97898066, z: 0.21183296}
   m_DirtyAABB: 0
+--- !u!114 &2428012020482106136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558034357578755075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4c9d8a3e638a54883823a6a1d650b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7575315977385831725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,6 +1694,7 @@ GameObject:
   - component: {fileID: 6236832649748321071}
   - component: {fileID: 1369653011960115952}
   - component: {fileID: 2444776492302460977}
+  - component: {fileID: 1166978074417909433}
   - component: {fileID: 8692190234025092749}
   - component: {fileID: 5218309699245153487}
   - component: {fileID: 8161286388920200465}
@@ -1740,7 +1754,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
@@ -1758,6 +1772,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!135 &1166978074417909433
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8984229097990224191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &8692190234025092749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1776,9 +1803,9 @@ MonoBehaviour:
   Energy: 100
   Hunger: 100
   Money: 100
-  MovementSpeed: 2
-  WalkSpeed: 2
-  RunSpeed: 4
+  MovementSpeed: 5
+  WalkSpeed: 5
+  RunSpeed: 5
   WanderPointsHolder: {fileID: 0}
   HungerDecreaseRate: 0.5
   MoneyDecreaseRate: 0.1

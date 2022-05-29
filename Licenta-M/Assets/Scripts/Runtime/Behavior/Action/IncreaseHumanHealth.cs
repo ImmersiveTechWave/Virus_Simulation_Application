@@ -31,10 +31,10 @@ namespace MF
 				lastTime = Time.time;
 			}
 
-			if (Actor.Model.Health.Value > 95f)
-			{
-				return TaskStatus.Success;
-			}
+			//if (Actor.Model.Health.Value > 95f)
+			//{
+			//	return TaskStatus.Success;
+			//}
 
 			return TaskStatus.Running;
 		}

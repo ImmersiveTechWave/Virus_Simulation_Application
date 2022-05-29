@@ -14,6 +14,7 @@ namespace MF
 			var random = new System.Random();
 			buildingManager = FindObjectOfType<BuildingManager>();
 			humans = gameObject.GetComponentsInChildren<HumanController>().ToList();
+			humans[random.Next(humans.Count)].MyModel.IsInfected = true;
 			foreach (var human in humans)
 			{
 				human.Model.HospitalPosition = buildingManager.HospitalBuilding;

@@ -19,7 +19,6 @@ namespace MF.UI
 		private void Start()
 		{
 			ScreenManager.ShowScreen<UIMainScreenScreenController>();
-			timeManager.TimeText = ScreenView.UICurrentTime;
 
 			ScreenView.UITimeManagerPlayTime.onClick.AddListener(StartTime);
 			ScreenView.UITimeManagerStopTime.onClick.AddListener(StopTime);
@@ -35,6 +34,14 @@ namespace MF.UI
 		private void Update()
 		{
 			UpdateSelectedHumanInfoPanel();
+			UpdateTime();
+		}
+
+		private void UpdateTime()
+		{
+			ScreenView.UICurrentDay.text = "Day " + timeManager.TimeModel.Day;
+			var newTime = string.Format("{0:0}:{1:00}:{2:00}", timeManager.TimeModel.Hours, timeManager.TimeModel.Minutes, timeManager.TimeModel.Seconds);
+			ScreenView.UICurrentTime.text = newTime;
 		}
 
 		private void CloseApplication()
@@ -87,6 +94,21 @@ namespace MF.UI
 				ScreenView.UIInfoPanelHolderInfoPanelHealth.text = "Health: " + App.SelectedHumanController.Model.Health;
 				ScreenView.UIInfoPanelHolderInfoPanelEnergy.text = "Energy: " + App.SelectedHumanController.Model.Energy;
 				ScreenView.UIInfoPanelHolderInfoPanelHunger.text = "Hunger: " + App.SelectedHumanController.Model.Hunger;
+				ScreenView.UIVirusInfoHolderVirusInfoBackgroundCurrentCases.text = "Current Cases: " + App.CurrentVirus?.CurrentCases.ToString();
+				ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalCases.text = "Total Cases: " + App.CurrentVirus?.TotalCases.ToString();
+				ScreenView.UIVirusInfoHolderVirusInfoBackgroundRecoverd.text = "Recoverd: " + App.CurrentVirus?.Recovered.ToString();
+				ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalDeaths.text = "Deaths: " + App.CurrentVirus?.Deaths.ToString();
+				if (App.SelectedHumanController.MyModel.IsInfected)
+				{
+					ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.text = "Virus State: Infected";
+					ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.color = Color.red;
+				}
+				else 
+				{
+					ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.text = "Virus State: Uninfected";
+					ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.color = Color.green;
+				}
+				ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalDeaths.text = "Deaths: " + App.CurrentVirus?.Deaths.ToString();
 			}
 		}
 

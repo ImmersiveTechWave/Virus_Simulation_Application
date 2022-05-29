@@ -12,10 +12,12 @@ namespace MF
 		private UIMainScreenScreenController mainScreen;
 		private bool lastStateValue;
 		private float whenTimeWasStopped = 0f;
+		private TimeManager timeManager;
 
 		public override void Start()
 		{
 			mainScreen = FindObjectOfType<UIMainScreenScreenController>(true);
+			timeManager = FindObjectOfType<TimeManager>();
 			lastTime = Time.time;
 
 			var random = new System.Random();
@@ -87,7 +89,7 @@ namespace MF
 			}
 
 			modelEnergyValue = modelEnergyValue - decreseEnergyValue;
-			return modelEnergyValue;
+			return Mathf.Clamp(modelEnergyValue, 0, 100);
 		}
 
 		public float DecreseHunger(float modelHungerValue)
@@ -114,7 +116,7 @@ namespace MF
 			}
 
 			modelHungerValue = modelHungerValue - decreseHungerValue;
-			return modelHungerValue;
+			return Mathf.Clamp(modelHungerValue, 0, 100);
 		}
 
 		public float DecreseMoney(float modelMoneyValue)
@@ -141,7 +143,7 @@ namespace MF
 			}
 
 			modelMoneyValue = modelMoneyValue - decreseMoneyValue;
-			return modelMoneyValue;
+			return Mathf.Clamp(modelMoneyValue, 0, 100);
 		}
 
 		public float DecreseHealth(float modelHealthValue)
@@ -160,6 +162,20 @@ namespace MF
 		public void Deselect()
 		{
 			mainScreen.CloseHumanInfoPanel();
+		}
+
+		private void OnTriggerEnter(Collider other)
+		{
+			var human = other.GetComponent<HumanController>();
+			if (human != null)
+			{
+				if (MyModel.IsInfected && !human.MyModel.IsInfected)
+				{
+					human.MyModel.IsInfected = true;
+					human.MyModel.InfectedDay = timeManager.TimeModel.Day;
+					App.CurrentVirus.TotalCases += 1f;
+				}
+			}
 		}
 	}
 }

@@ -6,5 +6,8 @@ namespace MF
 		public float MoneyDecreaseRate;
 		public float HealthDecreaseRate;
 		public float EnergyDecreaseRate;
+
+		public bool IsInfected;
+		public float InfectedDay;
 	}
 }
