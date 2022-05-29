@@ -148,9 +148,19 @@ namespace MF
 
 		public float DecreseHealth(float modelHealthValue)
 		{
-			var decreseHealthValue = 0f;
+			if (MyModel.IsInfected)
+			{
+				var random = new System.Random();
+				var hospitalizationRate = random.Next(1000);
+				if (App.CurrentVirus.HospitalizationRate * 10 > hospitalizationRate)
+				{
+					Debug.Log("Virus hos: " + hospitalizationRate);
+				}
 
-			modelHealthValue = modelHealthValue - decreseHealthValue;
+				var decreseHealthValue = 0f;
+
+				modelHealthValue = modelHealthValue - decreseHealthValue;
+			}
 			return modelHealthValue;
 		}
 
@@ -174,6 +184,7 @@ namespace MF
 					human.MyModel.IsInfected = true;
 					human.MyModel.InfectedDay = timeManager.TimeModel.Day;
 					App.CurrentVirus.TotalCases += 1f;
+					App.CurrentVirus.CurrentCases += 1f;
 				}
 			}
 		}

@@ -35,6 +35,8 @@ public class UIMainScreenScreenComponents : MonoBehaviour
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundCurrentCases{ get; protected set; }
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundTotalCases{ get; protected set; }
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundTotalDeaths{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundSevereCases{ get; protected set; }
+	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundMildCases{ get; protected set; }
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundRecoverd{ get; protected set; }
 	public Toggle UIVirusInfoHolderVirusInfoBackgroundMaskToggle{ get; protected set; }
 	public Toggle UIVirusInfoHolderVirusInfoBackgroundVaccineToggle{ get; protected set; }
@@ -72,6 +74,8 @@ public class UIMainScreenScreenComponents : MonoBehaviour
 		UIVirusInfoHolderVirusInfoBackgroundCurrentCases = transform.Find("VirusInfoHolder/VirusInfoBackground/CurrentCases").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundTotalCases = transform.Find("VirusInfoHolder/VirusInfoBackground/Total Cases").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundTotalDeaths = transform.Find("VirusInfoHolder/VirusInfoBackground/TotalDeaths").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundSevereCases = transform.Find("VirusInfoHolder/VirusInfoBackground/SevereCases").GetComponent<TextMeshProUGUI>();
+		UIVirusInfoHolderVirusInfoBackgroundMildCases = transform.Find("VirusInfoHolder/VirusInfoBackground/MildCases").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundRecoverd = transform.Find("VirusInfoHolder/VirusInfoBackground/Recoverd").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundMaskToggle = transform.Find("VirusInfoHolder/VirusInfoBackground/MaskToggle").GetComponent<Toggle>();
 		UIVirusInfoHolderVirusInfoBackgroundVaccineToggle = transform.Find("VirusInfoHolder/VirusInfoBackground/VaccineToggle").GetComponent<Toggle>();

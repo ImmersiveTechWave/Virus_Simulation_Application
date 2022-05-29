@@ -98,16 +98,8 @@ namespace MF.UI
 				ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalCases.text = "Total Cases: " + App.CurrentVirus?.TotalCases.ToString();
 				ScreenView.UIVirusInfoHolderVirusInfoBackgroundRecoverd.text = "Recoverd: " + App.CurrentVirus?.Recovered.ToString();
 				ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalDeaths.text = "Deaths: " + App.CurrentVirus?.Deaths.ToString();
-				if (App.SelectedHumanController.MyModel.IsInfected)
-				{
-					ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.text = "Virus State: Infected";
-					ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.color = Color.red;
-				}
-				else 
-				{
-					ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.text = "Virus State: Uninfected";
-					ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.color = Color.green;
-				}
+				ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.text = App.SelectedHumanController.MyModel.IsInfected ? "Virus State: Infected" : "Virus State: Uninfected";
+				ScreenView.UIInfoPanelHolderInfoPanelVirusStatus.color = App.SelectedHumanController.MyModel.IsInfected ? Color.red : Color.green;
 				ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalDeaths.text = "Deaths: " + App.CurrentVirus?.Deaths.ToString();
 			}
 		}
