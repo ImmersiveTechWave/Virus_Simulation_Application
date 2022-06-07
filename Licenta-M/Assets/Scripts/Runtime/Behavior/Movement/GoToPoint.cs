@@ -12,12 +12,15 @@ namespace MF
 		public bool UsePositionFromGameObject = false;
 		public bool UsePositionFromTransform = false;
 		public bool UsePositionFromVector = false;
+		public float DistanceError = 2f;
 
 		private Vector3 position;
+		private float sqrDistanceError;
 
 		public override void OnStart()
 		{
 			base.OnStart();
+			sqrDistanceError = DistanceError * DistanceError;
 			if (UsePositionFromGameObject == true)
 			{
 				position = GameObjectTargetPosition.Value.transform.position;
@@ -42,11 +45,12 @@ namespace MF
 		public override TaskStatus OnUpdate()
 		{
 			Actor.Movement.AiDestination = position;
-			if (!Actor.Movement.HasAiReachedDestination)
+			var sqrDistance = (Actor.transform.position - position).sqrMagnitude;
+			if (Actor.Movement.HasAiReachedDestination || sqrDistance < sqrDistanceError)
 			{
-				return TaskStatus.Running;
+				return TaskStatus.Success;
 			}
-			return TaskStatus.Success;
+			return TaskStatus.Running;
 		}
 	}
 }

@@ -14,12 +14,12 @@ namespace MF
 		[Range(0.1f, 5000f)] public float TimeMultipilcator = 500f;
 
 		public TimeModel TimeModel { get; set; }
-		public TMP_Text TimeText { get; set; }
 
 		private float startTime;
 		private SkyboxBlender skyboxBlender;
 		private bool lastStateValue;
 		private float whenTimeWasStopped = 0f;
+		private float lastHour = 0;
 
 		private void Awake()
 		{
@@ -62,7 +62,13 @@ namespace MF
 
 				TimeModel.Seconds = (int)(currentTime % SECONDS);
 				TimeModel.Minutes = (int)(currentTime / SECONDS % MINUTES);
+				lastHour = TimeModel.Hours;
 				TimeModel.Hours = (int)(((currentTime / (SECONDS * MINUTES)) + StartHour) % HOURS);
+
+				if (lastHour > TimeModel.Hours)
+				{
+					TimeModel.Day += 1;
+				}
 
 				var skyBoxBlendValue = 0f;
 				if (TimeModel.Hours >= 0 && TimeModel.Hours <= HALF_HOURS)
@@ -75,12 +81,6 @@ namespace MF
 				}
 
 				skyboxBlender.blend = skyBoxBlendValue;
-
-				var newTime = string.Format("{0:0}:{1:00}:{2:00}", TimeModel.Hours, TimeModel.Minutes, TimeModel.Seconds);
-				if (TimeText != null)
-				{
-					TimeText.text = newTime;
-				}
 			}
 		}
 	}

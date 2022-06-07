@@ -25,10 +25,10 @@ namespace MF
 				return 0f;
 			}
 
-			//if (Score.Value.IsLocked)
-			//{
-			//	return Score.Value.Score;
-			//}
+			if (Score.Value.IsLocked)
+			{
+				return Score.Value.Score;
+			}
 
 			Score.Value = new UtilityScore(EnergyScore.Value, false);
 

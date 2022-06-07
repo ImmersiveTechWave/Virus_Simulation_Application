@@ -7,6 +7,7 @@ namespace MF
 		public int Hours { get; set; } = 0;
 		public int Minutes { get; set; } = 0;
 		public int Seconds { get; set; } = 0;
+		public int Day { get; set; } = 1;
 
 		public TimeModel(int hour, int minute, int second)
 		{

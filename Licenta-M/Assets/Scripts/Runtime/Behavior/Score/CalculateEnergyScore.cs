@@ -1,5 +1,7 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using System;
+using UnityEngine;
 
 namespace MF
 {
@@ -27,7 +29,15 @@ namespace MF
 
 		public override TaskStatus OnUpdate()
 		{
-			EnergyScore.Value = Scores.EnergyScore[(int)Actor.Model.Energy.Value];
+			try
+			{
+
+				EnergyScore.Value = Scores.EnergyScore[(int)Actor.Model.Energy.Value];
+			}
+			catch (Exception ex)
+			{
+				Debug.Log(Actor.name + " --- " + (int)Actor.Model.Energy.Value);
+			}
 
 			var currentTimeInMinutes = (App.TimeManager.TimeModel.Hours + endTimeOffset) * 60 + App.TimeManager.TimeModel.Minutes;
 			if (startTimeInMinutes < currentTimeInMinutes && endTimeInMinutes > currentTimeInMinutes)

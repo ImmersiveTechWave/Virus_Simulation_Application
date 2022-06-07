@@ -29,6 +29,7 @@ namespace MF
 			if (Actor.CurrentBuilding != null && Actor.Model.CurrentActivity == Actor.CurrentBuilding.ActivityType)
 			{
 				Actor.MeshController.SkinnedMeshRenderer.enabled = false;
+				Actor.MyView.VirusSprite.gameObject.SetActive(false);
 			}
 		}
 
@@ -41,7 +42,7 @@ namespace MF
 				lastTime = Time.time;
 			}
 
-			var currentTimeInMinutes = (App.TimeManager.TimeModel.Hours + endTimeOffset) * 60 + App.TimeManager.TimeModel.Minutes;
+			//var currentTimeInMinutes = (App.TimeManager.TimeModel.Hours + endTimeOffset) * 60 + App.TimeManager.TimeModel.Minutes;
 			//if (startTimeInMinutes > currentTimeInMinutes || endTimeInMinutes < currentTimeInMinutes)
 			//{
 			//	return TaskStatus.Success;
@@ -54,6 +55,7 @@ namespace MF
 		{
 			base.OnEnd();
 			Actor.MeshController.SkinnedMeshRenderer.enabled = true;
+			Actor.MyView.VirusSprite.gameObject.SetActive(Actor.MyModel.IsInfected);
 		}
 	}
 }
