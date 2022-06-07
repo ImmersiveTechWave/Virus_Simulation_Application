@@ -25,22 +25,22 @@ namespace MF
 		{
 			if (!CompareMin)
 			{
-				if (ValueToCompare.Value > Value1?.Value && ValueToCompare.Value > Value2?.Value
-					&& ValueToCompare.Value > Value3?.Value && ValueToCompare.Value > Value4?.Value
-					&& ValueToCompare.Value > Value5?.Value && ValueToCompare.Value > Value6?.Value
-					&& ValueToCompare.Value > Value7?.Value && ValueToCompare.Value > Value8?.Value
-					&& ValueToCompare.Value > Value9?.Value)
+				if (ValueToCompare.Value >= Value1?.Value && ValueToCompare.Value >= Value2?.Value
+					&& ValueToCompare.Value >= Value3?.Value && ValueToCompare.Value >= Value4?.Value
+					&& ValueToCompare.Value >= Value5?.Value && ValueToCompare.Value >= Value6?.Value
+					&& ValueToCompare.Value >= Value7?.Value && ValueToCompare.Value >= Value8?.Value
+					&& ValueToCompare.Value >=  Value9?.Value)
 				{
 					return TaskStatus.Success;
 				}
 			}
 			else
 			{
-				if (ValueToCompare.Value < Value1?.Value && ValueToCompare.Value < Value2?.Value
-					&& ValueToCompare.Value < Value3?.Value && ValueToCompare.Value < Value4?.Value
-					&& ValueToCompare.Value < Value5?.Value && ValueToCompare.Value < Value6?.Value
-					&& ValueToCompare.Value < Value7?.Value && ValueToCompare.Value < Value8?.Value
-					&& ValueToCompare.Value < Value9?.Value)
+				if (ValueToCompare.Value < Value1?.Value && ValueToCompare.Value <= Value2?.Value
+					&& ValueToCompare.Value <= Value3?.Value && ValueToCompare.Value <= Value4?.Value
+					&& ValueToCompare.Value <= Value5?.Value && ValueToCompare.Value <= Value6?.Value
+					&& ValueToCompare.Value <= Value7?.Value && ValueToCompare.Value <= Value8?.Value
+					&& ValueToCompare.Value <= Value9?.Value)
 				{
 					return TaskStatus.Success;
 				}

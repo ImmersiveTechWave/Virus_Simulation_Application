@@ -38,8 +38,6 @@ namespace MF.UI
 				-1f : float.Parse(ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text);
 			var hospitalizationRateValue = ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text == "" ?
 				-1f : float.Parse(ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text);
-			var incubationTimeValue = ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text == "" ?
-				-1f : float.Parse(ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text);
 			var nameValue = ScreenView.UIInputHolderNameHolderNameInput.text;
 
 			if (spreadRateValue < 0 || spreadRateValue > 5)
@@ -72,16 +70,6 @@ namespace MF.UI
 				ScreenView.UIInputHolderHospitalizationRateHolderWarning.gameObject.SetActive(false);
 			}
 
-			if (incubationTimeValue < 0 || incubationTimeValue > 20)
-			{
-				ScreenView.UIInputHolderIncubationTimeHolderWarning.gameObject.SetActive(true);
-				isReadyToStart = false;
-			}
-			else
-			{
-				ScreenView.UIInputHolderIncubationTimeHolderWarning.gameObject.SetActive(false);
-			}
-
 			if (string.IsNullOrEmpty(nameValue))
 			{
 				ScreenView.UIInputHolderNameHolderWarning.gameObject.SetActive(true);
@@ -94,7 +82,7 @@ namespace MF.UI
 
 			if (isReadyToStart)
 			{
-				App.CurrentVirus = new VirusModel(nameValue, spreadRateValue, deathRateValue, hospitalizationRateValue, incubationTimeValue);
+				App.CurrentVirus = new VirusModel(nameValue, spreadRateValue, deathRateValue, hospitalizationRateValue);
 				ScreenManager.ShowScreen<UIMainScreenScreenController>();
 				App.CurrentVirus.TotalCases = HumanManager.NUMBER_INFECTED_PEOPLE;
 				App.CurrentVirus.CurrentCases = HumanManager.NUMBER_INFECTED_PEOPLE;
@@ -109,7 +97,6 @@ namespace MF.UI
 			ScreenView.UIInputHolderSpreadRateHolderSpreadRateInput.text = "";
 			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "";
 			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "";
-			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "";
 			ScreenView.UIInputHolderNameHolderNameInput.text = "";
 		}
 
@@ -118,7 +105,6 @@ namespace MF.UI
 			ScreenView.UIInputHolderSpreadRateHolderSpreadRateInput.text = "1.3";
 			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "0.07";
 			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "2";
-			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "2";
 			ScreenView.UIInputHolderNameHolderNameInput.text = "Normal Flu";
 		}
 
@@ -127,7 +113,6 @@ namespace MF.UI
 			ScreenView.UIInputHolderSpreadRateHolderSpreadRateInput.text = "2.25";
 			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "3.4";
 			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "19";
-			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "7";
 			ScreenView.UIInputHolderNameHolderNameInput.text = "COVID-19";
 		}
 
@@ -136,7 +121,6 @@ namespace MF.UI
 			ScreenView.UIInputHolderSpreadRateHolderSpreadRateInput.text = "3";
 			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "10.2";
 			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "90";
-			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "5";
 			ScreenView.UIInputHolderNameHolderNameInput.text = "SARS";
 		}
 
@@ -145,7 +129,6 @@ namespace MF.UI
 			ScreenView.UIInputHolderSpreadRateHolderSpreadRateInput.text = "0.6";
 			ScreenView.UIInputHolderDeathRateHolderDeathRateInput.text = "34.4";
 			ScreenView.UIInputHolderHospitalizationRateHolderHospitalizationRateInput.text = "90";
-			ScreenView.UIInputHolderIncubationTimeHolderIncubationTimeInput.text = "6";
 			ScreenView.UIInputHolderNameHolderNameInput.text = "MERS";
 		}
 	}

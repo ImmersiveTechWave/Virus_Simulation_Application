@@ -66,6 +66,40 @@ namespace MF
 			}
 
 			UpdateVirusSprite();
+			UpdateLifeState();
+		}
+
+		private void UpdateLifeState()
+		{
+			if (Model.Health < 1.5f)
+			{
+				App.CurrentVirus.Deaths += 1f;
+				App.CurrentVirus.CurrentCases -= 1f;
+				if (MyModel.IsSevere)
+				{
+					App.CurrentVirus.SevereCases -= 1f;
+				}
+				else
+				{
+					App.CurrentVirus.MildCases -= 1f;
+				}
+				gameObject.SetActive(false);
+			}
+
+			if (timeManager.TimeModel.Day - MyModel.InfectedDay >= 2 && Model.Health > 80 && MyModel.IsInfected)
+			{
+				MyModel.IsInfected = false;
+				App.CurrentVirus.Recovered += 1f;
+				App.CurrentVirus.CurrentCases -= 1f;
+				if (MyModel.IsSevere)
+				{
+					App.CurrentVirus.SevereCases -= 1f;
+				}
+				else
+				{
+					App.CurrentVirus.MildCases -= 1f;
+				}
+			}
 		}
 
 		private void UpdateVirusSprite()
@@ -162,13 +196,13 @@ namespace MF
 				var hospitalizationRate = randomGenerator.Next(1000);
 				if (App.CurrentVirus.HospitalizationRate * 10 > hospitalizationRate)
 				{
-					decreseHealthValue = MyModel.IsSevere ? 2.34f : 0.56f;
+					decreseHealthValue = MyModel.IsSevere ? 14.27f : 3.26f;
 					decreseHealthValue = MyModel.IsInQuarantine ? 0f : decreseHealthValue;
 				}
 
 				modelHealthValue = modelHealthValue - decreseHealthValue;
 			}
-			return modelHealthValue;
+			return Mathf.Clamp(modelHealthValue, 0, 100);
 		}
 
 		public void Select()

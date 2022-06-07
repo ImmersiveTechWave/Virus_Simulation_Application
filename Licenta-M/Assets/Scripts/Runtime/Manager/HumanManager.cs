@@ -33,7 +33,7 @@ namespace MF
 
 		public void SetHumansQuarantine(bool state)
 		{
-			var numberOfPeople = (int)(humans.Count * 0.7);
+			var numberOfPeople = (int)(humans.Count * 0.85);
 			for (int i = 0; i < numberOfPeople; i++)
 			{
 				humans[i].MyModel.IsInQuarantine = state;

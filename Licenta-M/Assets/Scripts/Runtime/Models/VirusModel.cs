@@ -21,7 +21,6 @@ namespace MF
 		/// <summary>
 		/// A value between 0 and 20
 		/// </summary>
-		public float IncubationTime { get; set; }
 		public float CurrentCases { get; set; } = 0;
 		public float TotalCases { get; set; } = 0;
 		public float Recovered { get; set; } = 0;
@@ -36,16 +35,14 @@ namespace MF
 			SpreadRate = 0;
 			DeathRate = 0;
 			HospitalizationRate = 0;
-			IncubationTime = 0;
 		}
 
-		public VirusModel(string name, float spreadRate, float deathRate, float hospitalizationRate, float incubationTime)
+		public VirusModel(string name, float spreadRate, float deathRate, float hospitalizationRate)
 		{
 			Name = name;
 			SpreadRate = spreadRate;
 			DeathRate = deathRate;
 			HospitalizationRate = hospitalizationRate;
-			IncubationTime = incubationTime;
 		}
 	}
 }

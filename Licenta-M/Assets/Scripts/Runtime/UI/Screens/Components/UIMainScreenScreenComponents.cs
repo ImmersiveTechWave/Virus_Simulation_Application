@@ -31,7 +31,6 @@ public class UIMainScreenScreenComponents : MonoBehaviour
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundSpreadRate{ get; protected set; }
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundDeathRate{ get; protected set; }
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundHospitalizationRate{ get; protected set; }
-	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundIncubationTime{ get; protected set; }
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundCurrentCases{ get; protected set; }
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundTotalCases{ get; protected set; }
 	public TextMeshProUGUI UIVirusInfoHolderVirusInfoBackgroundTotalDeaths{ get; protected set; }
@@ -71,7 +70,6 @@ public class UIMainScreenScreenComponents : MonoBehaviour
 		UIVirusInfoHolderVirusInfoBackgroundSpreadRate = transform.Find("VirusInfoHolder/VirusInfoBackground/SpreadRate").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundDeathRate = transform.Find("VirusInfoHolder/VirusInfoBackground/DeathRate").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundHospitalizationRate = transform.Find("VirusInfoHolder/VirusInfoBackground/HospitalizationRate").GetComponent<TextMeshProUGUI>();
-		UIVirusInfoHolderVirusInfoBackgroundIncubationTime = transform.Find("VirusInfoHolder/VirusInfoBackground/IncubationTime").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundCurrentCases = transform.Find("VirusInfoHolder/VirusInfoBackground/CurrentCases").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundTotalCases = transform.Find("VirusInfoHolder/VirusInfoBackground/Total Cases").GetComponent<TextMeshProUGUI>();
 		UIVirusInfoHolderVirusInfoBackgroundTotalDeaths = transform.Find("VirusInfoHolder/VirusInfoBackground/TotalDeaths").GetComponent<TextMeshProUGUI>();

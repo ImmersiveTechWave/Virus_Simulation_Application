@@ -168,7 +168,6 @@ namespace MF.UI
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundSpreadRate.text = "Spread Rate: " + App.CurrentVirus?.SpreadRate.ToString();
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundDeathRate.text = " Death Rate: " + App.CurrentVirus?.DeathRate.ToString() + "%";
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundHospitalizationRate.text = "Hospitalization Rate: " + App.CurrentVirus?.HospitalizationRate.ToString() + "%";
-			ScreenView.UIVirusInfoHolderVirusInfoBackgroundIncubationTime.text = "Incubation Time:\n" + App.CurrentVirus?.IncubationTime.ToString() + " Days";
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundCurrentCases.text = "Current Cases: " + App.CurrentVirus?.CurrentCases.ToString();
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundTotalCases.text = "Total Cases: " + App.CurrentVirus?.TotalCases.ToString();
 			ScreenView.UIVirusInfoHolderVirusInfoBackgroundRecoverd.text = "Recoverd: " + App.CurrentVirus?.Recovered.ToString();
